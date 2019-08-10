@@ -1,6 +1,4 @@
 name: mth309f2019-environment
-channels:
-  - conda-forge
 dependencies:
   - numpy
   - sympy
