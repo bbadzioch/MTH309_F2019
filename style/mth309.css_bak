@@ -9,12 +9,24 @@
 }
 
 
-.prompt {
-         display: none;
+.prompt {width: 0px;
+         min-width: 0px;
+         visibility: collapse
 }
 
-div #notebook{
-  margin:auto;
+#notebook_panel { /* main background */
+    background: rgb(245,245,245);
+}
+
+div.cell { /* set cell width */
+    width: 850px;
+}
+
+div #notebook { /* centre the content */
+    background: #fff; /* white background for content */
+    width: 1000px;
+    margin: auto;
+    padding-left: 0em;
 }
 
 #notebook ul {
@@ -38,16 +50,21 @@ margin-top:0.5em;
 div.output_subarea {
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-left:0em;
 }
 
-
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running {
+    border: 1px solid #111;
+}
 
 /* Put a solid color box around each cell and its output, visually linking them*/
 div.cell.code_cell {
     background-color: rgb(256,256,256);
-    width: 80%;
-    margin:auto;
+    border-radius: 10px;
+    padding: 0em;
+    width: 850px;
+    margin-left: 1em;
+    margin-top: 0em;
 }
 
 
@@ -56,10 +73,11 @@ div.text_cell_render{
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 120%;
     font-size: 130%;
-    width: 80%;
-    margin:auto;
+    width:750px;
+    margin-left:0em;
+    margin-right:1em;
     color: #19334d;
-
+    /*margin-right:auto;*/
 }
 
 /* Formatting for header cells */
@@ -145,7 +163,9 @@ strong {
           /*  font-family: "Source Code Pro";*/
 			font-size: 110%;
     }
-
+/*    .prompt{
+        display: None;
+    }*/
 
 
     .warning{
