@@ -240,9 +240,6 @@ class house_transform_bk(house_transform):
         q.title.text_font_size = '14pt'
 
 
-        q.line([0, 0], ylim_padded, line_width=3, alpha=0.6, color = axes_color)
-        q.line(xlim_padded,[0, 0],  line_width=1)
-
         q.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.5, fill_alpha=0.6),
                                           x_start= xlim_padded[0],
                                           y_start=0,
@@ -268,6 +265,9 @@ class house_transform_bk(house_transform):
         q.patch(self.house_right["roof"][0], self.house_right["roof"][1], color=self.house_colors["roof"], alpha=alpha, line_width=2)
         q.patch(self.house_right["door"][0], self.house_right["door"][1], color=self.house_colors["door"], alpha=alpha, line_width=2)
         q.patch(self.house_right["window"][0], self.house_right["window"][1], color=self.house_colors["window"], alpha=alpha, line_width=2)
+
+        q.line([0, 0], ylim_padded, line_width=3, alpha=0.6, color = axes_color)
+        q.line(xlim_padded,[0, 0],  line_width=3, alpha=0.6, color = axes_color)
 
         bk.show(gridplot([p, q], ncols =2, toolbar_options={"logo":None}))
 
