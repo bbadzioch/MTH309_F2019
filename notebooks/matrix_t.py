@@ -240,7 +240,7 @@ class house_transform_bk(house_transform):
         q.title.text_font_size = '14pt'
 
 
-        q.line([0, 0], ylim_padded, line_width=3, alpha=0.6, color = line_color)
+        q.line([0, 0], ylim_padded, line_width=3, alpha=0.6, color = axes_color)
         q.line(xlim_padded,[0, 0],  line_width=1)
 
         q.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.5, fill_alpha=0.6),
