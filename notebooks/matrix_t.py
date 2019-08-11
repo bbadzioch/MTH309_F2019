@@ -242,7 +242,8 @@ class house_transform_bk(house_transform):
 
         q.line([0, 0], ylim_padded, line_width=1)
         q.line(xlim_padded,[0, 0],  line_width=1)
-        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.6, fill_alpha=0.6),
+
+        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.5, fill_alpha=0.6),
                                           x_start= xlim_padded[0],
                                           y_start=0,
                                           x_end=xlim_padded[1],
@@ -252,7 +253,8 @@ class house_transform_bk(house_transform):
                                           line_alpha=0.6)
                                           )
 
-        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color = axes_color,line_alpha=0.6, fill_alpha=0.6),
+
+        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color = axes_color,line_alpha=0.5, fill_alpha=0.6),
                                           y_start = ylim_padded[0],
                                           y_end=ylim_padded[1],
                                           x_start=0, x_end=0,
