@@ -141,7 +141,7 @@ class house_transform_bk(house_transform):
 
         background_fill_color = "ivory"
         grid_line_color = "darkslategray"
-        axes_color = "darkslategray"
+        axes_color = (128, 128, 128) #"darkslategray"
 
         bk.output_notebook() # show plots in the notebook
         if save:
