@@ -5,7 +5,9 @@ from math import sin, cos, pi
 import bokeh.plotting as bk
 from bokeh.layouts import gridplot
 from bokeh.models import Arrow, OpenHead, NormalHead, VeeHead, Range1d, LinearAxis
+from sympy import *
 
+init_printing(use_latex='mathjax')
 
 class house_transform():
 
