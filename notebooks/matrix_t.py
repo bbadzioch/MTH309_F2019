@@ -145,7 +145,7 @@ class house_transform_bk(house_transform):
 
         bk.output_notebook() # show plots in the notebook
         if save:
-           bk.output_file(save)
+             bk.output_file(save)
 
         xlim_diff = self.xlim[1] - self.xlim[0]
         ylim_diff = self.ylim[1] - self.ylim[0]
@@ -188,32 +188,32 @@ class house_transform_bk(house_transform):
         p.x_range.bounds = list(1.5*xlim_padded) #'auto'
         p.y_range.bounds = list(1.5*ylim_padded) #'auto'
 
-
-        p.line([0, 0], ylim_padded, line_width=0)
-        p.line(xlim_padded,[0, 0],  line_width=0)
-        p.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.5, fill_alpha=0.6),
+        p.add_layout(Arrow(end=NormalHead(size=10, fill_color=axes_color, line_color=axes_color, line_alpha=1, fill_alpha=1),
                                           x_start= xlim_padded[0],
                                           y_start=0,
                                           x_end=xlim_padded[1],
                                           y_end=0,
                                           line_width=3,
                                           line_color = axes_color,
-                                          line_alpha=0.6)
+                                          line_alpha=1)
                                           )
 
-        p.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color = axes_color,line_alpha=0.5, fill_alpha=0.6),
+        p.add_layout(Arrow(end=NormalHead(size=10, fill_color=axes_color, line_color=axes_color,line_alpha=1, fill_alpha=1),
                                           y_start = ylim_padded[0],
                                           y_end=ylim_padded[1],
                                           x_start=0, x_end=0,
                                           line_width=3,
                                           line_color = axes_color,
-                                          line_alpha=0.6)
+                                          line_alpha=1)
                                           )
 
         p.patch(self.house_left["wall"][0], self.house_left["wall"][1], color=self.house_colors["wall"], alpha=alpha, line_width=2)
         p.patch(self.house_left["roof"][0], self.house_left["roof"][1], color=self.house_colors["roof"], alpha=alpha, line_width=2)
         p.patch(self.house_left["door"][0], self.house_left["door"][1], color=self.house_colors["door"], alpha=alpha, line_width=2)
         p.patch(self.house_left["window"][0], self.house_left["window"][1], color=self.house_colors["window"], alpha=alpha, line_width=2)
+        
+        p.line([0, 0], ylim_padded, line_width=3, color= axes_color)
+        p.line(xlim_padded,[0, 0],  line_width=3, color= axes_color)
 
 
 
@@ -240,9 +240,9 @@ class house_transform_bk(house_transform):
         q.ygrid.grid_line_alpha =  grid_alpha
         q.min_border_left = 40
         q.title.text_font_size = '14pt'
+        
 
-
-        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color= axes_color, line_color = axes_color, line_alpha=0.5, fill_alpha=0.6),
+        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color=axes_color, line_alpha=1, fill_alpha=1),
                                           x_start= xlim_padded[0],
                                           y_start=0,
                                           x_end=xlim_padded[1],
@@ -253,7 +253,7 @@ class house_transform_bk(house_transform):
                                           )
 
 
-        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color = axes_color,line_alpha=0.5, fill_alpha=0.6),
+        q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color=axes_color, line_alpha=1, fill_alpha=1),
                                           y_start = ylim_padded[0],
                                           y_end=ylim_padded[1],
                                           x_start=0, x_end=0,
@@ -268,8 +268,8 @@ class house_transform_bk(house_transform):
         q.patch(self.house_right["door"][0], self.house_right["door"][1], color=self.house_colors["door"], alpha=alpha, line_width=2)
         q.patch(self.house_right["window"][0], self.house_right["window"][1], color=self.house_colors["window"], alpha=alpha, line_width=2)
 
-        q.line([0, 0], ylim_padded, line_width=3, alpha=0.6, color = axes_color)
-        q.line(xlim_padded,[0, 0],  line_width=3, alpha=0.6, color = axes_color)
+        q.line([0, 0], ylim_padded, line_width=3, alpha=1, color = axes_color)
+        q.line(xlim_padded,[0, 0],  line_width=3, alpha=1, color = axes_color)
 
         bk.show(gridplot([p, q], ncols =2, toolbar_options={"logo":None}))
 
