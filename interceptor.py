@@ -112,7 +112,7 @@ class interceptor():
         #target velocity vector
         self.tv_plot, = self.ax.plot(*zip(list(self.tp), list(self.tp+self.tv)), self.color)
         #missile position
-        self.mp_plot, = self.ax.plot(*list(self.mp), '^', color=solf.color)
+        self.mp_plot, = self.ax.plot(*list(self.mp), '^', color=self.color)
         #missile velocity vector
         self.mv_plot, = self.ax.plot(*zip(list(self.mp), list(self.mp+self.mv)), self.color)
 
