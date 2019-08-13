@@ -33,21 +33,21 @@ class interceptor():
             # self.sol[0] is the duration of the flight is the missile to the inteception point
             self.sol = self.choose_sol()
             self.tp0 = self.sol[0]*self.mv - np.sum(self.sol)*self.tv0 # initial position of the target
-        
-        
+
+
         # limits of plot axes
         self.xmax = abs(self.tp0[0]) + 10
         self.xmin = (-1)*abs(self.tp0[0]) -10
         self.ymax = max(abs(self.tp0[1]), self.sol[0]*self.mv[1]) +15
         self.ymin = -1
         self.start_game(q)
-        
-   
-        
+
+
+
     def start_game(self, q=None):
         #if q='show' the missile launch time will be displayed
         # in the time entry box
-    
+
         # reset initial values
         self.tp = self.tp0.copy()
         self.tv = self.tv0.copy()
@@ -80,10 +80,10 @@ class interceptor():
         text3 = '---------------------------------------'
         text4 = 'missile position        =  [{:4}, {:4}]'.format(self.mp[0], self.mp[1])
         text5 = 'missile velocity vector =  [{:4}, {:4}]'.format(self.mv[0], self.mv[1])
-        
+
         # text for the final screen
         summary = []
-        summary.append('TARGET INTERCEPTED') 
+        summary.append('TARGET INTERCEPTED')
         summary.append('MISSION SUMMARY:')
         summary.append('----------------------------------------')
         summary.append('initial target position  =  [{:4}, {:4}]'.format(self.tp0[0], self.tp0[1]))
@@ -95,9 +95,9 @@ class interceptor():
         summary.append('missile launch time      =  {:>5.2f}'.format(self.sol[1]))
         summary.append('target interception time =  {:>5.2f}'.format(np.sum(self.sol)))
         summary.append('----------------------------------------')
-        summary.append('THE END') 
+        summary.append('THE END')
         self.summary_text = '\n'.join(summary)
-        
+
         # self.text_all is the string displyed on the plot
         self.text_all = '\n'.join([text1, text2, text3, text4, text5])
         self.data_text = self.ax.text(0.05, 0.95,
@@ -128,8 +128,8 @@ class interceptor():
                                 )
 
         plt.show()
-    
-    
+
+
     def missile_launch(self, t0):
         '''
         function linked to the text box
@@ -195,7 +195,7 @@ class interceptor():
         fall_rate = np.array([0, -0.003*self.ymax]) # controls the fall rate of particles
         brightness = 0.95  # controls decrease in the brightness of the particles
         alpha = 1      # initial transparency of the target marker
-        
+
         #do not animate until missile launch time has been entered
         while not self.launched:
             yield -1
@@ -227,7 +227,7 @@ class interceptor():
                     # if missile is above target or target crossed the missile axis then the missile will not hit
                     if self.tp[0] > 2 or self.mp[1] > self.tp[1] + 2:
                         self.text_all = 'time: {:.2f}\ntarget lost'.format(t)
-                        
+
                 self.dist = np.linalg.norm(self.tp - self.mp)
 
                 # missile hit
@@ -244,10 +244,10 @@ class interceptor():
                 self.tp = self.tp + (np.random.rand(N, 2)-0.5)*spread + fall_rate
                 self.tp_plot.set_markersize(1.5)
                 alpha = min(alpha*brightness + 0.05*np.random.rand(1)[0], 1)
-                self.tp_plot.set_alpha(alpha)    
+                self.tp_plot.set_alpha(alpha)
                 text_end = int((t - np.sum(self.sol))/incr)
                 self.text_all = '\n'+ self.summary_text[:text_end]
 
-                
+
 if __name__ == "__main__":
     x = interceptor()
