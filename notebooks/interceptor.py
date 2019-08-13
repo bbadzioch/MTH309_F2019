@@ -99,7 +99,7 @@ class interceptor():
         summary.append('missile launch time      =  {:>2} seconds'.format(self.sol[1]))
         #summary.append('target interception time =  {:>2} seconds'.format(np.sum(self.sol)))
         #summary.append('----------------------------------------')
-        summary.append('control code =  {:>2}'.format(self.code))
+        summary.append('control code             =  {:>2}'.format(self.code))
         summary.append('----------------------------------------')
         summary.append('THE END') 
         self.summary_text = '\n'.join(summary)
