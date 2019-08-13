@@ -65,7 +65,7 @@ class interceptor():
         self.ax.set_facecolor('k')
         self.ax.set_xlim(self.xmin, self.xmax)
         self.ax.set_ylim(self.ymin, self.ymax)
-        self.ax.grid(alpha = 0.2, color='g')
+        self.ax.grid(alpha = 0.2, color='lime')
 
         # text box for entering the missile launch time
         istr = ('' if q != 'show' else str(self.sol[1]))
@@ -102,18 +102,18 @@ class interceptor():
         self.data_text = self.ax.text(0.05, 0.95,
                                       self.text_all,
                                       transform=self.ax.transAxes,
-                                      color='g',
+                                      color='lime',
                                       family = self.font,
                                       verticalalignment = 'top',
                                      )
         #target position
         self.tp_plot, = self.ax.plot(*list(self.tp), 'g+', ms=7)
         #target velocity vector
-        self.tv_plot, = self.ax.plot(*zip(list(self.tp), list(self.tp+self.tv)), 'g')
+        self.tv_plot, = self.ax.plot(*zip(list(self.tp), list(self.tp+self.tv)), 'lime')
         #missile position
         self.mp_plot, = self.ax.plot(*list(self.mp), 'g^')
         #missile velocity vector
-        self.mv_plot, = self.ax.plot(*zip(list(self.mp), list(self.mp+self.mv)), 'g')
+        self.mv_plot, = self.ax.plot(*zip(list(self.mp), list(self.mp+self.mv)), 'lime')
 
 
         #animation
