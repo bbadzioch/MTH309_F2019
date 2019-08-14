@@ -32,7 +32,7 @@ def num2char(numlist):
                 print("{:>4}".format(c), end = ''),
             print('\n')
             
-def num2char_simple(numlist):
+def num2char_text_only(numlist):
     chars = []
     for n in numlist:
         n = round(n)
@@ -86,7 +86,7 @@ def make_cipher(s=None):
 
 def tokenizer(K, cipher):
     m =  Matrix(cipher).reshape(len(cipher)//3, 3).T
-    return num2char_simple([int(x) for x in list((K*m).T)])
+    return num2char_text_only([int(x) for x in list((K*m).T)])
 
 def simple_num_generator(seed):
     a = 1103515245
