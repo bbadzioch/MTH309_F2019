@@ -7,7 +7,7 @@ This page explains how to access the MTH 309 website on UBx.
 
 In order to access the MTH 309 website you will need to set up a UBx account:
 
-**1)** Visit the  the webpage <a http="https://learning.buffalo.edu"  target="_blank">learning.buffalo.edu</a>
+**1)** Visit the  the webpage <a href="https://learning.buffalo.edu"  target="\_blank">learning.buffalo.edu</a>
 and click on the **Create Account** button.
 
 ![pic1](UBx_pics/UBx_instructions_001.png)
@@ -42,7 +42,7 @@ Clicking on the **View Course** button will get you to the MTH 309 website.
 
 After your UBx account is set up, you can access the MTH 309 website as follows:
 
- **1)** Visit <a http="https://learning.buffalo.edu"  target="_blank">learning.buffalo.edu</a>.
+ **1)** Visit <a href="https://learning.buffalo.edu"  target="\_blank">learning.buffalo.edu</a>.
 
 **2)** If this page shows that you are already signed in (i.e. your UBIT name is displayed
 in the upper right corner) click on your UBIT name, and from the menu which will appear
