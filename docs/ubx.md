@@ -1,6 +1,6 @@
 # Accessing the MTH 309 website
 
-This page explains for to access the MTH 309 website on UBx.
+This page explains how to access the MTH 309 website on UBx.
 
 
 ##  Signing up for a UBx account
