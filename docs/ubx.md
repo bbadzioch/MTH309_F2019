@@ -12,6 +12,9 @@ and click on the **Create Account** button.
 
 ![pic1](UBx_pics/UBx_instructions_001.png)
 
+<br/>
+<br/>
+
 **2)** On the next page click on the **UB** button.
 
 ![pic2](UBx_pics/UBx_instructions_002.png)
