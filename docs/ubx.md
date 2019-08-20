@@ -13,22 +13,30 @@ and click on the **Create Account** button.
 ![pic1](UBx_pics/UBx_instructions_001.png)
 
 <br/>
-<br/>
 
 **2)** On the next page click on the **UB** button.
 
 ![pic2](UBx_pics/UBx_instructions_002.png)
+
+
+<br/>
 
 **3)** When prompted enter your UBIT name and password. On the page that will
 shows up after that click on the **Create account** button.
 
 ![pic2](UBx_pics/UBx_instructions_003.png)
 
+
+<br/>
+
 **3)** This should bring you to the page My Courses, which will show the MTH 309 course.
 Clicking on the **View Course** button will get you to the MTH 309 website.   
 
 ![pic3](UBx_pics/UBx_instructions_004.png)
 
+
+<br/>
+<br/>
 
 ##  Subsequent website access
 
