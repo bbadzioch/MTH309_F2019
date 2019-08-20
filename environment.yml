@@ -1,9 +1,0 @@
-name: mth309f2019-environment
-dependencies:
-  - numpy
-  - sympy
-  - mpmath
-  - matplotlib
-  - pandas
-  - bokeh
-  - requests
