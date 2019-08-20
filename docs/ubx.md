@@ -31,7 +31,8 @@ After your UBx account is set up, you can access the MTH 309 website as follows:
 
 **2)** If this page shows that you are already signed in (i.e. your UBIT name is displayed
 in the upper right corner) click on your UBIT name, and from the menu which will appear
-select **Dashboard**, and then **View Course**.
+select **Dashboard**. This will bring you to My Courses pages. Click on the **View Course**
+button to get to the MTH 309 website.
 
 **3)** If you are not signed in, click on the **Sign in** button. On the next page click on
 the **UB** button, and when prompted enter your UBIT name and password. This will bring
