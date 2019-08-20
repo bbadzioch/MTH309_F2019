@@ -1,4 +1,4 @@
-# Accessing MTH 309 website
+# Accessing the MTH 309 website
 
 This page explains for to access the MTH 309 website on UBx.
 
