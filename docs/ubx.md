@@ -29,7 +29,7 @@ shows up after that click on the **Create account** button.
 
 <br/>
 
-**3)** This should bring you to the page My Courses, which will show the MTH 309 course.
+**4)** This should bring you to the page My Courses, which will show the MTH 309 course.
 Clicking on the **View Course** button will get you to the MTH 309 website.   
 
 ![pic3](UBx_pics/UBx_instructions_004.png)
