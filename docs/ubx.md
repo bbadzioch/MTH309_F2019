@@ -23,7 +23,7 @@ Clicking on the **View Course** button will get you to the MTH 309 website.
 ![pic3](UBx_pics/UBx_instructions003.png)
 
 
-##  Subsequent website access.
+##  Subsequent website access
 
 After your UBx account is set up, you can access the MTH 309 website as follows:
 
