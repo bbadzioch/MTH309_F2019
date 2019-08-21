@@ -31,7 +31,8 @@ def num2char(numlist):
             for c in chars:
                 print("{:>4}".format(c), end = ''),
             print('\n')
-            
+            chars = []
+
 def num2char_text_only(numlist):
     chars = []
     for n in numlist:
@@ -43,7 +44,7 @@ def num2char_text_only(numlist):
         else:
             chars.append(chr(n+64))
     return "".join(chars)
-     
+
 def char2num(s):
     numlist = []
     S = s.upper()
@@ -92,7 +93,7 @@ def simple_num_generator(seed):
     a = 1103515245
     c = 12345
     m = 181
-    return (a*seed + c) % m 
+    return (a*seed + c) % m
 
 def cipher_generator(pnum):
     try:
@@ -103,4 +104,3 @@ def cipher_generator(pnum):
         print("Error: Invalid format of the UB person number")
         return None
     return cipher
-    
