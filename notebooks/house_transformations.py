@@ -17,7 +17,7 @@ def show_pic(fname):
     width = 800
     height = 410
     href = root + fname + suffix
-    IFrame(href, width, height)
+    return IFrame(href, width, height)
 
 init_printing(use_latex='mathjax')
 
