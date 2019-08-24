@@ -11,7 +11,7 @@ from sympy import *
 # For use in a notebook
 from from IPython.display import IFrame
 
-def show_house_frame(fname):
+def show_pic(fname):
     root = "https://bbadzioch.github.io/MTH309_F2019/house_transformations_pics/"
     suffix = ".html"
     width = 800
