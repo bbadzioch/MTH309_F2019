@@ -7,7 +7,23 @@ from bokeh.layouts import gridplot
 from bokeh.models import Arrow, OpenHead, NormalHead, VeeHead, Range1d, LinearAxis
 from sympy import *
 
+
+# For use in a notebook
+from from IPython.display import IFrame
+
+def show_house_frame(fname):
+    root = "https://bbadzioch.github.io/MTH309_F2019/house_transformations_pics/"
+    suffix = ".html"
+    width = 800
+    height = 410
+    href = root + fname + suffix
+    IFrame(href, width, height)
+
 init_printing(use_latex='mathjax')
+
+
+
+
 
 class house_transform():
 
@@ -211,7 +227,7 @@ class house_transform_bk(house_transform):
         p.patch(self.house_left["roof"][0], self.house_left["roof"][1], color=self.house_colors["roof"], alpha=alpha, line_width=2)
         p.patch(self.house_left["door"][0], self.house_left["door"][1], color=self.house_colors["door"], alpha=alpha, line_width=2)
         p.patch(self.house_left["window"][0], self.house_left["window"][1], color=self.house_colors["window"], alpha=alpha, line_width=2)
-        
+
         p.line([0, 0], ylim_padded, line_width=3, color= axes_color)
         p.line(xlim_padded,[0, 0],  line_width=3, color= axes_color)
 
@@ -240,7 +256,7 @@ class house_transform_bk(house_transform):
         q.ygrid.grid_line_alpha =  grid_alpha
         q.min_border_left = 40
         q.title.text_font_size = '14pt'
-        
+
 
         q.add_layout(Arrow(end=NormalHead(size = 10, fill_color=axes_color, line_color=axes_color, line_alpha=1, fill_alpha=1),
                                           x_start= xlim_padded[0],
