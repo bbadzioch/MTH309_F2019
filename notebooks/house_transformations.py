@@ -9,7 +9,7 @@ from sympy import *
 
 
 # For use in a notebook
-from from IPython.display import IFrame
+from IPython.display import IFrame
 
 def show_pic(fname):
     root = "https://bbadzioch.github.io/MTH309_F2019/house_transformations_pics/"
