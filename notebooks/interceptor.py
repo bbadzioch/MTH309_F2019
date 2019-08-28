@@ -72,7 +72,7 @@ class interceptor():
 
         # text box for entering the missile launch time
         istr = ('' if q != 'show' else str(self.sol[1]))
-        self.text_box = TextBox(self.t_ax, 'Select missile launch time: ', initial=istr)
+        self.text_box = TextBox(self.t_ax, 'Select missile launch time:  ', initial=istr)
         self.text_box.on_submit(self.missile_launch)
 
 
