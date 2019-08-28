@@ -85,9 +85,9 @@ def make_cipher(s=None):
     text = 'CLASSIFIED ' + np.random.choice(lines).strip()
     return hill_encoder(s=s, text=text)
 
-def tokenizer(K, cipher):
-    m =  Matrix(cipher).reshape(len(cipher)//3, 3).T
-    return num2char_text_only([int(x) for x in list((K*m).T)])
+def tokenizer(*, kl, sz):
+    m =  Matrix(sz).reshape(len(sz)//3, 3).T
+    return num2char_text_only([int(x) for x in list((kl*m).T)])
 
 def simple_num_generator(seed):
     a = 1103515245
