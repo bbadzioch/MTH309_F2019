@@ -49,8 +49,6 @@ class interceptor():
    
         
     def start_game(self, q=None):
-        #if q='show' the missile launch time will be displayed
-        # in the time entry box
     
         # reset initial values
         self.tp = self.tp0.copy()
@@ -74,7 +72,7 @@ class interceptor():
 
         # text box for entering the missile launch time
         istr = ('' if q != 'show' else str(self.sol[1]))
-        self.text_box = TextBox(self.t_ax, 'Select missile launch time $t_0=$ ', initial=istr)
+        self.text_box = TextBox(self.t_ax, 'Select missile launch time:', initial=istr)
         self.text_box.on_submit(self.missile_launch)
 
 
