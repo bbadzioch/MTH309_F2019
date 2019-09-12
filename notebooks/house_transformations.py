@@ -290,7 +290,9 @@ class house_transform_bk(house_transform):
         bk.show(gridplot([p, q], ncols =2, toolbar_options={"logo":None}))
 
 
-
+def matrix_t2(A):
+    x = house_transform_bk(A, left_shift=[1, 1])
+    x.show_house()
 
 def matrix_t(A):
     x = house_transform_bk(A)
