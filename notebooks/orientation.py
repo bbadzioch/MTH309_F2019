@@ -10,11 +10,6 @@ from ipywidgets import widgets
 from IPython.display import display
 
 
-
-
-import numpy as np
-
-
 class PlotData():
     """
     Class which provides data for the determinant sign plot
@@ -57,8 +52,6 @@ class PlotData():
             return 1
         else:
             return -1
-
-
 
     def set_v1(self, v1):
         self.v1 = np.array(v1)
@@ -119,7 +112,6 @@ class Plot():
     rectangle_fc = 'w'
     rectangle_ec = 'k'
     zorder_rectangle = 1
-
 
 
     def get_wedge_params(self):
