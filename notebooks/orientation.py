@@ -1,9 +1,379 @@
+%matplotlib notebook
 import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.patches as patches
+import matplotlib.lines as mlines
+import matplotlib.text as mtext
 from matplotlib import style
+import numpy as np
 # remove the next two imports for use outside a Jupyter notebook
 from ipywidgets import widgets
 from IPython.display import display
+
+
+
+
+import numpy as np
+
+
+class PlotData():
+    """
+    Class which provides data for the determinant sign plot
+    """
+
+    scale = 0.9
+    center = np.array([0, 0])
+    v1 = np.array([1, 0])
+    v2 = np.array([0, 1])
+
+    def __init__(self, v1 = None, v2 = None):
+        if v1 is not None:
+            self.v1 = np.array(v1)
+        if v2 is not None:
+            self.v2 = np.array(v2)
+
+    @staticmethod
+    def angle(v):
+        theta = 180*np.arctan2(*v[::-1])/np.pi
+        return theta
+
+    def get_r(self):
+        return self.scale*min(np.linalg.norm(self.v1), np.linalg.norm(self.v2))
+
+    def get_theta1(self):
+        return self.angle(self.v1)
+
+    def get_theta2(self):
+        return self.angle(self.v2)
+    
+    
+    def get_det(self):
+        return np.linalg.det(np.vstack((self.v1, self.v2)))
+
+    def get_orientation(self):
+        det = self.get_det()
+        if det == 0:
+            return 0
+        elif  det > 0:
+            return 1
+        else:
+            return -1
+
+
+
+    def set_v1(self, v1):
+        self.v1 = np.array(v1)
+
+    def set_v2(self, v2):
+        self.v2 = np.array(v2)
+        
+
+class Plot():
+    """
+    Class which generates the determinant sign plot
+    """
+
+    # figure properties
+    figsize = (5, 5)
+    style = "seaborn"
+    xlim = 2
+    ylim = 2
+
+    # properties of thepatch, markers, and lines
+    wedge_color_plus = 'coral'
+    wedge_color_minus = 'cornflowerblue'
+    wedge_alpha = 0.5
+    edge_alpha = 1
+    v1_color= "tomato"
+    v2_color = "steelblue"
+    center_color = "k"
+    mfc = "w"
+    mew = 2
+    ms = 9
+    marker = 'o'
+    linestyle = '-'
+    lw= 4
+    zorder1 = 30
+    zorder2 = 20
+    zorder0 = 40
+    zorder_wedge = 10
+
+
+    # text properties
+    text_det_x = text_v1_x = text_v2_x = -1.83
+    text_det_y = 1.85
+    text_v1_y = 1.6
+    text_v2_y = 1.4
+
+    ha = "left"
+    va = "top"
+    usetex = False #True
+    fontsize = 10
+    zorder_text = 5
+    fontfamily = 'monospace'
+    fontweight = "bold"
+
+    # rectangle properties
+    rectangle_xy = (-1.95, 1.13)
+    rectangle_width = 1.95
+    rectangle_height = 0.82
+    rectangle_fc = 'w'
+    rectangle_ec = 'k'
+    zorder_rectangle = 1
+
+
+
+    def get_wedge_params(self):
+        center  = self.data.center
+        theta1 = self.data.get_theta1() 
+        theta2 = self.data.get_theta2() 
+        r = self.data.get_r() 
+        orientation = self.data.get_orientation() 
+        if orientation == 0:
+            r=0.1
+            color = "w"
+        elif orientation == -1:
+            theta1, theta2 = theta2, theta1
+            color = self.wedge_color_minus
+        elif orientation == 1:
+            color = self.wedge_color_plus
+        return dict(center = center, 
+                    r = r, 
+                    theta1 = theta1, 
+                    theta2 = theta2, 
+                    color = color,
+                    alpha = self.wedge_alpha,
+                    zorder = self.zorder_wedge
+                   )
+
+
+    def get_marker_params(self, i):
+
+        marker = self.marker
+        mfc= self.mfc
+        ms = self.ms
+        alpha = self.edge_alpha
+
+        if i == 0:
+            coords = self.data.center
+            mec = self.center_color
+            zorder = self.zorder0
+        elif i == 1:
+            coords = self.data.v1
+            mec = self.v1_color
+            zorder = self.zorder1
+        elif i == 2:
+            coords = self.data.v2
+            mec = self.v2_color
+            zorder = self.zorder2
+
+        xdata = [coords[0]]
+        ydata = [coords[1]]
+
+        return dict(xdata = xdata, 
+                    ydata = ydata,
+                    marker = self.marker,
+                    ms = self.ms,
+                    mfc = self.mfc,
+                    mec = mec,
+                    mew = self.mew,
+                    alpha = alpha,
+                    zorder = zorder
+                   )
+
+
+    def get_line_params(self, i):
+
+        lw = self.lw
+        alpha = self.edge_alpha
+
+        if i == 1:
+            xdata, ydata = zip(self.data.center, self.data.v1)
+            color = self.v1_color
+            zorder = self.zorder1
+        elif i == 2:
+            xdata, ydata = zip(self.data.center, self.data.v2)
+            color = self.v2_color
+            zorder = self.zorder2
+
+        return dict(xdata = xdata, 
+                    ydata = ydata,
+                    linestyle = self.linestyle,
+                    lw = self.lw,
+                    color = color,
+                    alpha = alpha,
+                    zorder = zorder
+                   )
+
+
+    def format_text(self):
+        det = round(self.data.get_det(),2)
+        v11, v12 = [round(n, 1) for n in self.data.v1]
+        v21, v22 = [round(n, 1) for n in self.data.v2]
+        text_det = f"det[$\\bf{{v_1}}$, $\\bf{{v_1}}$] = $\\bf{det}$"
+        text_v1 = f"$\\bf{{v_1}}$ = [{v11:>4}, {v12:>4}]"
+        text_v2 = f"$\\bf{{v_2}}$ = [{v21:>4}, {v22:>4}]" 
+        return [text_det, text_v1, text_v2]
+
+
+    def get_text_params(self, i):
+
+        text_list = self.format_text()
+        if i == 0:
+            text = text_list[0]
+            x = self.text_det_x
+            y = self.text_det_y
+            color = "k"
+        if i == 1:
+            text = text_list[1]
+            x = self.text_v1_x
+            y = self.text_v1_y
+            color = self.v1_color
+        if i == 2:
+            text = text_list[2]
+            x = self.text_v2_x
+            y = self.text_v2_y
+            color = self.v2_color
+
+        return dict(x = x,
+                    y = y, 
+                    text = text,
+                    ha = self.ha,
+                    va = self.va, 
+                    fontsize = self.fontsize,
+                    usetex = self.usetex,
+                    fontfamily = self.fontfamily,
+                    color = color,
+                    fontweight = self.fontweight,
+                    zorder = self.zorder_text 
+                   )
+
+
+    def get_rectangle_params(self):
+
+        return dict(xy = self.rectangle_xy,
+                    width = self.rectangle_width, 
+                    height = self.rectangle_height,
+                    ec = self.rectangle_ec,
+                    fc = self.rectangle_fc,
+                    zorder = self.zorder_rectangle 
+                   )
+
+
+    def __init__(self, v1 = None, v2 = None, show_angle = True):
+
+        self.data = PlotData(v1, v2)
+        self.show_angle = show_angle
+
+        self.text_det = mtext.Text(**self.get_text_params(0))
+        self.text_v1 = mtext.Text(**self.get_text_params(1))
+        self.text_v2 = mtext.Text(**self.get_text_params(2))
+        self.wedge = patches.Wedge(**self.get_wedge_params())
+        self.rectangle = patches.Rectangle(**self.get_rectangle_params())
+        self.m0 = mlines.Line2D(**self.get_marker_params(0))
+        self.m1 = mlines.Line2D(**self.get_marker_params(1))
+        self.m2 = mlines.Line2D(**self.get_marker_params(2))
+        self.edge1 = mlines.Line2D(**self.get_line_params(1))
+        self.edge2 = mlines.Line2D(**self.get_line_params(2))
+
+
+        style.use(self.style)
+
+        self.fig = plt.figure(figsize = self.figsize)
+        self.ax = plt.subplot(111, aspect="equal")
+
+        self.ax.set_xlim(-self.xlim, self.xlim)
+        self.ax.set_ylim(-self.ylim, self.ylim)
+
+        self.ax.add_patch(self.rectangle)
+        self.ax.add_artist(self.text_det)
+        self.ax.add_artist(self.text_v1)
+        self.ax.add_artist(self.text_v2)
+        self.ax.add_line(self.edge1)
+        self.ax.add_line(self.m1)
+        self.ax.add_line(self.edge2)
+        self.ax.add_line(self.m2)
+        self.ax.add_line(self.m0)
+        if self.show_angle:
+            self.ax.add_patch(self.wedge)
+
+
+    def move_edge(self):
+        self.m1.set_data([self.data.v1[0]],[self.data.v1[1]])
+        self.m2.set_data([self.data.v2[0]],[self.data.v2[1]])
+
+        self.edge1.set_data(*zip(self.data.center, self.data.v1))
+        self.edge2.set_data(*zip(self.data.center, self.data.v2))
+
+        wedge_d = self.get_wedge_params()
+        self.wedge.set_radius(wedge_d["r"])
+        self.wedge.set_theta1(wedge_d["theta1"])
+        self.wedge.set_theta2(wedge_d["theta2"])
+        self.wedge.set_color(wedge_d["color"])
+
+        self.text_det.set_text(self.format_text()[0])
+        self.text_v1.set_text(self.format_text()[1])
+        self.text_v2.set_text(self.format_text()[2])
+
+
+def det_sign(show_angle = True):
+    """
+    Displays an interactive plot of two vectors illustrating
+    how the sign of the determinant changes depending on position
+    of the vectors.
+    
+    :show_angle:
+        Boolean. It True, shows the angle between the two vectors. 
+    """
+
+    p = Plot([1, 0], [-1, 0], show_angle = show_angle)
+    button_down = False
+    selected = 0
+    selection_tolerance = 0.2
+
+    def dist(u, v):
+
+        return np.linalg.norm(np.array(u) - np.array(v))
+
+    def onclick(event):
+
+        nonlocal button_down, selected, selection_tolerance
+
+        button_down = True
+        position = [round(event.xdata, 1), round(event.ydata, 1)]
+
+        if dist(p.data.v1, position) < selection_tolerance:
+            selected = 1
+        elif dist(p.data.v2, position) < selection_tolerance:
+            selected = 2
+
+    def onrelease(event):
+        nonlocal button_down, selected
+        button_down = False
+        selected = 0
+
+
+    def move(event):
+        nonlocal p, button_down, selected
+
+        if not button_down or selected == 0:
+            return
+
+        position = [round(event.xdata, 1), round(event.ydata, 1)]
+        if selected == 1:
+            p.data.set_v1(position)
+        elif selected == 2:
+            p.data.set_v2(position)
+        p.move_edge()
+
+    cid_click = p.fig.canvas.mpl_connect('button_press_event', onclick)
+    cid_release = p.fig.canvas.mpl_connect('button_release_event', onrelease)
+    cid_move = p.fig.canvas.mpl_connect('motion_notify_event', move)
+    return p
+
+
+    plt.show()
+det_sign()
+
 
 
 def colored_points():
