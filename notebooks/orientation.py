@@ -70,7 +70,7 @@ class Plot():
     xlim = 2
     ylim = 2
 
-    # properties of thepatch, markers, and lines
+    # properties of the angle patch, markers, and lines
     wedge_color_plus = 'coral'
     wedge_color_minus = 'cornflowerblue'
     wedge_alpha = 0.5
