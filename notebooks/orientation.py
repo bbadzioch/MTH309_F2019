@@ -120,7 +120,7 @@ class Plot():
         r = self.data.get_r()
         orientation = self.data.get_orientation()
         if orientation == 0:
-            r=0.1
+            r=0
             color = "w"
         elif orientation == -1:
             theta1, theta2 = theta2, theta1
