@@ -200,7 +200,7 @@ class Plot():
         det = round(self.data.get_det(),2)
         v11, v12 = [round(n, 1) for n in self.data.v1]
         v21, v22 = [round(n, 1) for n in self.data.v2]
-        text_det = f"det[$\\bf{{v_1}}$, $\\bf{{v_1}}$] = $\\bf{det}$"
+        text_det = f"det[$\\bf{{v_1}}$, $\\bf{{v_2}}$] = $\\bf{det}$"
         text_v1 = f"$\\bf{{v_1}}$ = [{v11:>4}, {v12:>4}]"
         text_v2 = f"$\\bf{{v_2}}$ = [{v21:>4}, {v22:>4}]" 
         return [text_det, text_v1, text_v2]
@@ -316,7 +316,7 @@ def det_sign(show_angle = True):
         Boolean. It True, shows the angle between the two vectors. 
     """
 
-    p = Plot([1, 0], [-1, 0], show_angle = show_angle)
+    p = Plot(show_angle = show_angle)
     button_down = False
     selected = 0
     selection_tolerance = 0.2
