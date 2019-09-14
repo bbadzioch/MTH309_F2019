@@ -363,7 +363,6 @@ def det_sign(show_angle = True):
 
 
     plt.show()
-det_sign()
 
 
 
