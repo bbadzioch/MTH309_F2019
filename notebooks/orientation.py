@@ -38,8 +38,8 @@ class PlotData():
 
     def get_theta2(self):
         return self.angle(self.v2)
-    
-    
+
+
     def get_det(self):
         return np.linalg.det(np.vstack((self.v1, self.v2)))
 
@@ -57,7 +57,7 @@ class PlotData():
 
     def set_v2(self, v2):
         self.v2 = np.array(v2)
-        
+
 
 class Plot():
     """
@@ -115,10 +115,10 @@ class Plot():
 
     def get_wedge_params(self):
         center  = self.data.center
-        theta1 = self.data.get_theta1() 
-        theta2 = self.data.get_theta2() 
-        r = self.data.get_r() 
-        orientation = self.data.get_orientation() 
+        theta1 = self.data.get_theta1()
+        theta2 = self.data.get_theta2()
+        r = self.data.get_r()
+        orientation = self.data.get_orientation()
         if orientation == 0:
             r=0.1
             color = "w"
@@ -127,10 +127,10 @@ class Plot():
             color = self.wedge_color_minus
         elif orientation == 1:
             color = self.wedge_color_plus
-        return dict(center = center, 
-                    r = r, 
-                    theta1 = theta1, 
-                    theta2 = theta2, 
+        return dict(center = center,
+                    r = r,
+                    theta1 = theta1,
+                    theta2 = theta2,
                     color = color,
                     alpha = self.wedge_alpha,
                     zorder = self.zorder_wedge
@@ -160,7 +160,7 @@ class Plot():
         xdata = [coords[0]]
         ydata = [coords[1]]
 
-        return dict(xdata = xdata, 
+        return dict(xdata = xdata,
                     ydata = ydata,
                     marker = self.marker,
                     ms = self.ms,
@@ -186,7 +186,7 @@ class Plot():
             color = self.v2_color
             zorder = self.zorder2
 
-        return dict(xdata = xdata, 
+        return dict(xdata = xdata,
                     ydata = ydata,
                     linestyle = self.linestyle,
                     lw = self.lw,
@@ -202,7 +202,7 @@ class Plot():
         v21, v22 = [round(n, 1) for n in self.data.v2]
         text_det = f"det[$\\bf{{v_1}}$, $\\bf{{v_2}}$] = $\\bf{det}$"
         text_v1 = f"$\\bf{{v_1}}$ = [{v11:>4}, {v12:>4}]"
-        text_v2 = f"$\\bf{{v_2}}$ = [{v21:>4}, {v22:>4}]" 
+        text_v2 = f"$\\bf{{v_2}}$ = [{v21:>4}, {v22:>4}]"
         return [text_det, text_v1, text_v2]
 
 
@@ -226,27 +226,27 @@ class Plot():
             color = self.v2_color
 
         return dict(x = x,
-                    y = y, 
+                    y = y,
                     text = text,
                     ha = self.ha,
-                    va = self.va, 
+                    va = self.va,
                     fontsize = self.fontsize,
                     usetex = self.usetex,
                     fontfamily = self.fontfamily,
                     color = color,
                     fontweight = self.fontweight,
-                    zorder = self.zorder_text 
+                    zorder = self.zorder_text
                    )
 
 
     def get_rectangle_params(self):
 
         return dict(xy = self.rectangle_xy,
-                    width = self.rectangle_width, 
+                    width = self.rectangle_width,
                     height = self.rectangle_height,
                     ec = self.rectangle_ec,
                     fc = self.rectangle_fc,
-                    zorder = self.zorder_rectangle 
+                    zorder = self.zorder_rectangle
                    )
 
 
@@ -311,9 +311,9 @@ def det_sign(show_angle = True):
     Displays an interactive plot of two vectors illustrating
     how the sign of the determinant changes depending on position
     of the vectors.
-    
+
     :show_angle:
-        Boolean. It True, shows the angle between the two vectors. 
+        Boolean. It True, shows the angle between the two vectors.
     """
 
     p = Plot(show_angle = show_angle)
@@ -359,8 +359,6 @@ def det_sign(show_angle = True):
     cid_click = p.fig.canvas.mpl_connect('button_press_event', onclick)
     cid_release = p.fig.canvas.mpl_connect('button_release_event', onrelease)
     cid_move = p.fig.canvas.mpl_connect('motion_notify_event', move)
-    return p
-
 
     plt.show()
 
