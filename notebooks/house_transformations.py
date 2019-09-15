@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.animation import FuncAnimation, ImageMagickWriter
-from math import sin, cos, pi
 import bokeh.plotting as bk
 from bokeh.layouts import gridplot
 from bokeh.models import Arrow, OpenHead, NormalHead, VeeHead, Range1d, LinearAxis
