@@ -79,8 +79,8 @@ class Plot():
     style = "seaborn"
     ax_facecolor = "lightblue" #"skyblue" #paleturquoise"
     gridcolor = "w"
-    xlim = (-2, 2)
-    ylim = (-1, 3)
+    xlim = (-3, 3)
+    ylim = (-2, 4)
 
     # properties of the angle patch, markers, and lines
     edge_alpha = 1
