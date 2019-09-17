@@ -18,7 +18,7 @@ class PlotData():
     v1 = np.array([1, 0])
     v2 = np.array([0, 1])
 
-  
+
     def __init__(self, v1 = None, v2 = None):
         if v1 is not None:
             self.v1 = np.array(v1)
@@ -73,7 +73,7 @@ class Plot():
     """
     Class which generates the plot of the house
     """
-    
+
     # figure properties
     figsize = (6, 6)
     style = "seaborn"
@@ -98,8 +98,8 @@ class Plot():
     text_coords_x = {1 : 0.07, 2 : 0.2}
     text_coords_y = {0 : 0.91, 1 : 0.81}
 
-    # rectangle properties 
-    # rectangle coordinates are in axes coords 
+    # rectangle properties
+    # rectangle coordinates are in axes coords
     rectangle_width = 0.32
     rectangle_height = 0.22
     rectangle_xy = (0.03, 1 - 0.03 - rectangle_height)
@@ -177,7 +177,7 @@ class Plot():
             zorder = self.zorder_roof,
             mclass = mpl.patches.Polygon
             )
-    
+
     def get_sun_params(self):
 
         return dict(xy = (1.25, 1.75),
@@ -185,7 +185,7 @@ class Plot():
             ec = self.house_ec,
             fc = "gold",
             lw = self.house_lw,
-            zorder = self.zorder_sun, 
+            zorder = self.zorder_sun,
             mclass = mpl.patches.Circle
             )
 
@@ -242,7 +242,7 @@ class Plot():
                     mec = mec,
                     mew = 2,
                     alpha = self.edge_alpha,
-                    zorder = zorder, 
+                    zorder = zorder,
                     mclass = mpl.lines.Line2D
                    )
 
@@ -264,7 +264,7 @@ class Plot():
                     lw = 4,
                     color = color,
                     alpha = self.edge_alpha,
-                    zorder = zorder, 
+                    zorder = zorder,
                     mclass = mpl.lines.Line2D
                    )
 
@@ -274,7 +274,7 @@ class Plot():
         n  = v[j]
         s = f"{n:>4.1f}"
         if  "-0.0" in s:
-            s = " " + s[1:] 
+            s = " " + s[1:]
         return s
 
     def get_text_params(self, i, j):
@@ -286,7 +286,7 @@ class Plot():
             color = self.v1_color
         else:
             color = self.v2_color
-  
+
         return dict(x = x,
                     y = y,
                     text = text,
@@ -294,11 +294,11 @@ class Plot():
                     va = "center",
                     fontsize = 14,
                     usetex = False,
-                    fontfamily = "monospace",
+                    family = "monospace",
                     color = color,
                     fontweight = "bold",
                     transform =  self.ax.transAxes,
-                    zorder = self.zorder_text, 
+                    zorder = self.zorder_text,
                     mclass = mpl.text.Text
                    )
 
@@ -325,10 +325,10 @@ class Plot():
                     fc = "None",
                     lw = 2,
                     transform =  self.ax.transAxes,
-                    zorder = self.zorder_small_rectangle, 
-                    mclass = mpl.patches.Rectangle 
+                    zorder = self.zorder_small_rectangle,
+                    mclass = mpl.patches.Rectangle
                     )
-        
+
 
     def get_mask_rectangle_params(self):
 
@@ -339,7 +339,7 @@ class Plot():
                     fc = self.mask_rectangle_fc,
                     lw = 0,
                     transform =  self.ax.transAxes,
-                    zorder = self.zorder_mask_rectangle, 
+                    zorder = self.zorder_mask_rectangle,
                     mclass = mpl.patches.Rectangle
                     )
 
@@ -362,14 +362,14 @@ class Plot():
         self.ax.set_facecolor(self.ax_facecolor)
         self.ax.grid(color = self.gridcolor)
 
-        self.background_params = [self.get_rectangle_params, 
-                                  self.get_small_rectangle_params, 
-                                  self.get_mask_rectangle_params, 
-                                  lambda : self.get_coord_ax_params("x"), 
+        self.background_params = [self.get_rectangle_params,
+                                  self.get_small_rectangle_params,
+                                  self.get_mask_rectangle_params,
+                                  lambda : self.get_coord_ax_params("x"),
                                   lambda : self.get_coord_ax_params("y")
                                   ]
 
-        self.foreground_params = [self.get_wall_params, 
+        self.foreground_params = [self.get_wall_params,
                                   self.get_door_params,
                                   self.get_window_params,
                                   self.get_roof_params,
@@ -390,7 +390,7 @@ class Plot():
 
         for f in self.background_params:
             self.make_artist(f(), method = self.ax.add_artist)
-            
+
         self.foreground = []
         for f in self.foreground_params:
             self.foreground.append(self.make_artist(f(), method = self.ax.add_artist))
