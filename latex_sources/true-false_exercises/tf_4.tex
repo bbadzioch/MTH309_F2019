@@ -1,0 +1,171 @@
+
+\input{tf_header.tex}
+\usepackage{multicol}
+
+\begin{document}
+
+
+
+\lecture{True or False ? (part 4)}
+
+
+
+
+
+{\bf Instructions.}
+
+\vskip 2mm
+
+In this problem you will be given a few statements. For each statement you  need to 
+decide if it is true or not, and justify your answer. 
+
+
+
+\vskip 15mm
+
+
+{\bf How to justify your answer.}
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is false, it suffices  to give a counterexample. 
+For example, consider the the statement: 
+
+\begin{center}
+\emph{The last digit of every even number is either 2, 4, or 8.}
+\end{center}
+
+To show that this statement is false, it is enough to point out that, for example, 10 is an even number, 
+but its last digit is 0. 
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is true, you need to 
+provide a reasoning explaining why it is true in all instances. Giving one example when it is true will 
+not suffice, since the statement may not work in some other cases.  For example, consider the the statement: 
+
+\begin{center}
+\emph{If $n$ is an even number then $n+2$ is also an even number.}
+\end{center}
+
+You can justify that this is true as follows. Even numbers are integers which are multiples of $2$. 
+If $n$ is even then $n = 2m$ for some integer $m$. Then $n+2 = 2m+2 = 2(m+1)$, 
+which shows that $n+2$ is even.  
+
+
+\hfill
+
+\begin{cbox}[Note]
+This problem will not be collected or graded. However, problems of this type will appear on  exams
+in this course. Sample solutions are provided at the end. 
+
+\end{cbox}
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf For each of the statements given below decide if it is true or false. If you decide that it is true, justify your answer. 
+If you think it is false give a counterexample. }
+
+\vskip 10mm
+
+\benu
+\item[\bf a)]  If $\displaystyle A = \bbm a & b \\ c & d \\ \ebm$ is a $2\times 2$ matrix which is invertible, then
+the matrix $B = \bbm c & d \\ a & b \\ \ebm$ is also invertible. 
+
+\vskip 10mm
+
+
+\item[\bf b)]  If $V$ is a vector space and $T\colon V \to V$ is a linear transformation 
+then $T(\zzero)  = \zzero$ (where $\zzero$ denotes the zero vector in $V$). 
+
+
+\vskip 10mm
+
+\item[\bf c)]  If $W$ be a vector space and  $V_{1}$, $V_{2}$ are subspaces of $W$, then $V_{1}\cup V_{2}$
+is also a subspace of $W$. Here $V_{1}\cup V_{2}$ denotes the union of $V_{1}$ and $V_{2}$, i.e. the set of 
+vectors which belong to  either $V_{1}$ or $V_{2}$ (or to both). 
+
+\vskip 10mm
+
+\item[\bf d)]  If $W$ be a vector space and  $V_{1}$, $V_{2}$ are subspaces of $W$, then $V_{1}\cap V_{2}$
+is also a subspace of $W$. Here $V_{1}\cap V_{2}$ denotes the intersection of $V_{1}$ and $V_{2}$, i.e. the set of 
+vectors which belong both  $V_{1}$ and $V_{2}$.  
+
+\eenu
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf Here are solutions to the questions from the previous page. You should try to answer all 
+questions by yourself before reading these solutions.}
+
+\vskip 5mm 
+
+{\small
+\benu
+
+
+\item[\bf a)] TRUE.  The matrix $B$ is obtained from $A$ by interchanging rows, so $\det B = -\det A$. 
+Since $A$ is invertible we have $\det A\neq 0$. Therefore $\det B \neq 0$, which shows that $B$ is 
+invertible. 
+
+
+\vskip 5mm
+
+\item[\bf b)] TRUE.  We have:
+$$
+T(\zzero) = T(\zzero + \zzero) = T(\zzero) + T(\zzero)
+$$
+Subtracting $T(\zzero)$ from both sides we obtain $\zzero = T(\zzero)$.
+
+
+
+
+
+
+\vskip 5mm
+
+\item[\bf c)]  FALSE. Take for example $W = \R^{2}$. Let $V_{1}$ be the subspace consisting of all vectors
+of the form $\bbm a \\ 0 \ebm$, where $a$ is an arbitrary number. Let $V_{2}$ be the subspace consisting 
+of all vectors of the form $\bbm 0 \\ b \ebm$, where again $b$ is an arbitrary number. 
+We have $\ee_{1} = \bbm 1 \\ 0 \ebm \in V_{1}$  and 
+ $\ee_{2} \in \bbm 0 \\ 1 \ebm \in  V_{2}$. This gives $\ee_{1}, \ee_{2}\in V_{1}\cup V_{2}$. However 
+ $\ee_{1} + \ee_{2} =  \bbm 1 \\ 1 \ebm$ is not in $V_{1}\cup V_{2}$, since this vector is neither in 
+ $V_{1}$ nor in $V_{2}$. This shows that $V_{1}\cup V_{2}$ is not a subspace of $\R^{2}$.
+
+\vskip 5mm
+
+\item[\bf d)] TRUE.  To show this we need to check that 
+\benu
+\item[(1)] $\zzero\in V_{1}\cap V_{2}$
+\item[\ (2)] if $\uu, \vv \in V_{1}\cap V_{2}$ then $\uu + \vv \in V_{1}\cap V_{2}$
+\item[\ (3)] if $\uu \in V_{1}\cap V_{2}$ and $c\in \R$ then $c\uu  \in V_{1}\cap V_{2}$.
+\eenu
+
+Checking (1): Since $V_{1}$, $V_{2}$ are subspaces, we have $\zzero\in V_{1}$ and $\zzero\in V_{2}$, so 
+$\zzero \in V_{1}\cap V_{2}$. 
+
+\vskip 3mm
+
+
+Checking (2):  Since $\uu, \vv \in V_{1}\cap V_{2}$, it means that $\uu, \vv \in V_{1}$  and 
+$\uu, \vv \in V_{2}$. Since $V_{1}$ and $V_{2}$ are subspaces this gives that $\uu + \vv \in V_{1}$
+and $\uu + \vv \in  V_{2}$. This means that $\uu + \vv \in V_{1}\cap V_{2}$. 
+
+\vskip 3mm
+
+Checking (3):  Since $\uu \in V_{1}\cap V_{2}$, it means that $\uu  \in V_{1}$  and 
+$\uu \in V_{2}$. Since $V_{1}$ and $V_{2}$ are subspaces this gives that $c\uu \in V_{1}$
+and $c\uu  \in  V_{2}$ for any real number $\R$. This means that $c\uu  \in V_{1}\cap V_{2}$. 
+
+\eenu
+}
+
+
+
+\end{document}

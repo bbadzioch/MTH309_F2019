@@ -1,0 +1,164 @@
+
+\input{tf_header.tex}
+\usepackage{multicol}
+
+\begin{document}
+
+
+
+\lecture{True or False ? (part 2)}
+
+
+
+
+
+{\bf Instructions.}
+
+\vskip 2mm
+
+In this problem you will be given a few statements. For each statement you  need to 
+decide if it is true or not, and justify your answer. 
+
+
+
+\vskip 15mm
+
+
+{\bf How to justify your answer.}
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is false, it suffices  to give a counterexample. 
+For example, consider the the statement: 
+
+\begin{center}
+\emph{The last digit of every even number is either 2, 4, or 8.}
+\end{center}
+
+To show that this statement is false, it is enough to point out that, for example, 10 is an even number, 
+but its last digit is 0. 
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is true, you need to 
+provide a reasoning explaining why it is true in all instances. Giving one example when it is true will 
+not suffice, since the statement may not work in some other cases.  For example, consider the the statement: 
+
+\begin{center}
+\emph{If $n$ is an even number then $n+2$ is also an even number.}
+\end{center}
+
+You can justify that this is true as follows. Even numbers are integers which are multiples of $2$. 
+If $n$ is even then $n = 2m$ for some integer $m$. Then $n+2 = 2m+2 = 2(m+1)$, 
+which shows that $n+2$ is even.  
+
+
+\hfill
+
+\begin{cbox}[Note]
+This problem will not be collected or graded. However, problems of this type will appear on  exams
+in this course. Sample solutions are provided at the end. 
+
+\end{cbox}
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf For each of the statements given below decide if it is true or false. If you decide that it is true, justify your answer. 
+If you think it is false give a counterexample. }
+
+\vskip 10mm
+
+\benu
+\item[\bf a)] If $\vv_{1}, \vv_{2}, \vv_{3}$ are vectors in $\R^{3}$ and $\vv_{1} \in \Span(\vv_{2}, \vv_{3})$ then 
+the set $\{\vv_{1}, \vv_{2}, \vv_{3} \}$ is linearly dependent. 
+
+\vskip 10mm
+
+\item[\bf b)] If $\vv_{1}, \vv_{2}, \vv_{3}$ are vectors in $\R^{3}$ and the set $\{\vv_{1}, \vv_{2}\}$ is linearly independent, 
+then the set $\{\vv_{1}, \vv_{2}, \vv_{3}\}$ is also linearly independent.  
+
+
+\vskip 10mm
+
+\item[\bf c)]  If $A$ is a $2\times 3$ matrix, and $\vv$ is a vector in the column space $\Col(A)$ then $\vv\in \R^{3}$.
+
+\vskip 10mm
+
+\item[\bf d)]  If $A$ is a matrix, $\Nul(A)$ is the null space of $A$, and $\vv$ is a non-zero vector such that 
+$\vv\in\Nul(A)$, then $\Nul(A)$ must contain infinitely many vectors. 
+
+
+\eenu
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf Here are solutions to the questions from the previous page. You should try to answer all 
+questions by yourself before reading these solutions.}
+
+\vskip 5mm 
+
+{\small
+\benu
+
+\item[\bf a)] TRUE. If $\vv_{1} \in \Span(\vv_{2}, \vv_{3})$ then  $\vv_{1}  = c_{2}\vv_{2} + c_{3}\vv_{3}$, 
+for some scalars $c_{1}, c_{2}$, or equivalently
+$$\vv_{1}  - c_{2}\vv_{2} - c_{3}\vv_{3} = \zzero$$
+This means that the vector equation $x_{1}\vv_{1}  + x_{2}\vv_{2} + x_{3}\vv_{3} = \zzero$ has a non-trivial 
+solution $x_{1} = 1$, $x_{2} = -c_{2}$, $x_{3} = -c_{3}$. Thus the set $\{\vv_{1}, \vv_{2}, \vv_{3} \}$ is linearly dependent. 
+
+\vskip 5mm
+
+
+\item[\bf b)] FALSE. For example, take:
+
+
+$$
+\vv_{1} = 
+\bbm
+1 \\ 0 \\ 0
+\ebm, 
+\vv_{2} = 
+\bbm
+0 \\ 1 \\ 0
+\ebm, 
+\vv_{3} = 
+\bbm
+1 \\ 1 \\ 0
+\ebm, 
+$$
+The set $\{\vv_{1}, \vv_{2}\}$ is linearly independent (since the equation $x_{1}\vv_{1} + x_{2}\vv_{2} = \zzero$
+has only one, trivial solution). On the other hand the set $\{\vv_{1}, \vv_{2}, \vv_{3}\}$ is  linearly dependent because the 
+equation $x_{1}\vv_{1} + x_{2}\vv_{2}  + x_{3}\vv_{3}= \zzero$ has non-trivial solutions, e.g.
+$x_{1} =1$, $x_{2} = 1$, $x_{3} = -1$.
+
+
+\vskip 5mm
+
+\item[\bf c)]  FALSE. The column space of a matrix $A$ consists of linear combinations of columns of $A$. Since 
+every column of a $2\times 3$ matrix has 2 entries, thus every vector of $\Col(A)$ is a vector in $\R^{2}$, and 
+not in $\R^{3}$.  
+
+
+\vskip 5mm
+
+\item[\bf d)] TRUE. The null space of $A$ consists of all vectors which are solutions of the matrix equation $A\xx = \zzero$. 
+This equation always has the trivial solution $\xx = \zzero$. If $\vv$ is a non-zero vector in $\Nul(A)$, then $\xx = \vv$
+is another solution of this equation. This implies that $A\xx = \zzero$ has infinitely many solutions, and so $\Nul(A)$
+consists of infinitely many vectors. 
+
+
+
+
+
+\eenu
+}
+
+
+
+\end{document}

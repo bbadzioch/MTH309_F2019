@@ -1,0 +1,48 @@
+\contentsline {section}{\numberline {1}Systems of linear equations}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Matrices and elementary row operations}{5}{section.2}% 
+\contentsline {section}{\numberline {3}Gauss-Jordan elimination}{9}{section.3}% 
+\contentsline {section}{\numberline {4}Pivot positions and pivot columns}{17}{section.4}% 
+\contentsline {section}{\numberline {5}Applications of systems of linear equations}{19}{section.5}% 
+\contentsline {section}{\numberline {6}Vectors and vector equations}{25}{section.6}% 
+\contentsline {section}{\numberline {7}Linear combinations and span}{33}{section.7}% 
+\contentsline {section}{\numberline {8}Linear independence}{42}{section.8}% 
+\contentsline {section}{\numberline {9}Linear independence vs span}{48}{section.9}% 
+\contentsline {section}{\numberline {10}Matrix equations}{51}{section.10}% 
+\contentsline {section}{\numberline {11}The column space and the null space}{56}{section.11}% 
+\contentsline {section}{\numberline {12}Solutions of matrix equations}{63}{section.12}% 
+\contentsline {section}{\numberline {13}Matrix transformations}{67}{section.13}% 
+\contentsline {section}{\numberline {14}Linear transformations and standard matrices}{75}{section.14}% 
+\contentsline {section}{\numberline {15}Matrix multiplication}{82}{section.15}% 
+\contentsline {section}{\numberline {16}Another view of matrix multiplication}{88}{section.16}% 
+\contentsline {section}{\numberline {17}Matrix algebra}{91}{section.17}% 
+\contentsline {section}{\numberline {18}Inverse of a matrix}{96}{section.18}% 
+\contentsline {section}{\numberline {19}Application: Hill ciphers}{107}{section.19}% 
+\contentsline {section}{\numberline {20}Application: Error correcting codes}{111}{section.20}% 
+\contentsline {section}{\numberline {21}Determinants}{116}{section.21}% 
+\contentsline {section}{\numberline {22}Determinants and cofactor expansion}{124}{section.22}% 
+\contentsline {section}{\numberline {23}Determinants and row reduction}{128}{section.23}% 
+\contentsline {section}{\numberline {24}Cramer's rule}{133}{section.24}% 
+\contentsline {section}{\numberline {25}Geometric interpretation of determinants}{137}{section.25}% 
+\contentsline {section}{\numberline {26}Determinants and linear transformations}{143}{section.26}% 
+\contentsline {section}{\numberline {27}Sign of the determinant}{145}{section.27}% 
+\contentsline {section}{\numberline {28}General vector spaces}{146}{section.28}% 
+\contentsline {section}{\numberline {29}Vector subspaces}{150}{section.29}% 
+\contentsline {section}{\numberline {30}Linear transformations of vector spaces}{153}{section.30}% 
+\contentsline {section}{\numberline {31}Basis of a vector space}{158}{section.31}% 
+\contentsline {section}{\numberline {32}Dimension of a vector space}{169}{section.32}% 
+\contentsline {section}{\numberline {33}The rank theorem}{177}{section.33}% 
+\contentsline {section}{\numberline {34}Change of basis}{185}{section.34}% 
+\contentsline {section}{\numberline {35}Application: Perspective rectification}{192}{section.35}% 
+\contentsline {section}{\numberline {36}The dot product}{199}{section.36}% 
+\contentsline {section}{\numberline {37}Orthogonal bases}{203}{section.37}% 
+\contentsline {section}{\numberline {38}Orthogonal projections}{210}{section.38}% 
+\contentsline {section}{\numberline {39}Computation of least square solutions}{222}{section.39}% 
+\contentsline {section}{\numberline {40}Least square lines and curves}{229}{section.40}% 
+\contentsline {section}{\numberline {41} Inner product spaces}{235}{section.41}% 
+\contentsline {section}{\numberline {42}Eigenvalues and eigenvectors}{247}{section.42}% 
+\contentsline {section}{\numberline {43}Matrix diagonalization}{258}{section.43}% 
+\contentsline {section}{\numberline {44}Diagonalization of symmetric matrices}{269}{section.44}% 
+\contentsline {section}{\numberline {45}Spectral decomposition of symmetric matrices}{278}{section.45}% 
+\contentsline {section}{\numberline {46}Application: Symmetric image compression}{283}{section.46}% 
+\contentsline {section}{\numberline {47}Singular Value Decomposition}{286}{section.47}% 
+\contentsline {section}{\numberline {48}Application: SVD and data analysis}{294}{section.48}% 

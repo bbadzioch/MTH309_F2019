@@ -1,0 +1,48 @@
+\BOOKMARK [1][-]{section.1}{Systems of linear equations}{}% 1
+\BOOKMARK [1][-]{section.2}{Matrices and elementary row operations}{}% 2
+\BOOKMARK [1][-]{section.3}{Gauss-Jordan elimination}{}% 3
+\BOOKMARK [1][-]{section.4}{Pivot positions and pivot columns}{}% 4
+\BOOKMARK [1][-]{section.5}{Applications of systems of linear equations}{}% 5
+\BOOKMARK [1][-]{section.6}{Vectors and vector equations}{}% 6
+\BOOKMARK [1][-]{section.7}{Linear combinations and span}{}% 7
+\BOOKMARK [1][-]{section.8}{Linear independence}{}% 8
+\BOOKMARK [1][-]{section.9}{Linear independence vs span}{}% 9
+\BOOKMARK [1][-]{section.10}{Matrix equations}{}% 10
+\BOOKMARK [1][-]{section.11}{The column space and the null space}{}% 11
+\BOOKMARK [1][-]{section.12}{Solutions of matrix equations}{}% 12
+\BOOKMARK [1][-]{section.13}{Matrix transformations}{}% 13
+\BOOKMARK [1][-]{section.14}{Linear transformations and standard matrices}{}% 14
+\BOOKMARK [1][-]{section.15}{Matrix multiplication}{}% 15
+\BOOKMARK [1][-]{section.16}{Another view of matrix multiplication}{}% 16
+\BOOKMARK [1][-]{section.17}{Matrix algebra}{}% 17
+\BOOKMARK [1][-]{section.18}{Inverse of a matrix}{}% 18
+\BOOKMARK [1][-]{section.19}{Application: Hill ciphers}{}% 19
+\BOOKMARK [1][-]{section.20}{Application: Error correcting codes}{}% 20
+\BOOKMARK [1][-]{section.21}{Determinants}{}% 21
+\BOOKMARK [1][-]{section.22}{Determinants and cofactor expansion}{}% 22
+\BOOKMARK [1][-]{section.23}{Determinants and row reduction}{}% 23
+\BOOKMARK [1][-]{section.24}{Cramer's rule}{}% 24
+\BOOKMARK [1][-]{section.25}{Geometric interpretation of determinants}{}% 25
+\BOOKMARK [1][-]{section.26}{Determinants and linear transformations}{}% 26
+\BOOKMARK [1][-]{section.27}{Sign of the determinant}{}% 27
+\BOOKMARK [1][-]{section.28}{General vector spaces}{}% 28
+\BOOKMARK [1][-]{section.29}{Vector subspaces}{}% 29
+\BOOKMARK [1][-]{section.30}{Linear transformations of vector spaces}{}% 30
+\BOOKMARK [1][-]{section.31}{Basis of a vector space}{}% 31
+\BOOKMARK [1][-]{section.32}{Dimension of a vector space}{}% 32
+\BOOKMARK [1][-]{section.33}{The rank theorem}{}% 33
+\BOOKMARK [1][-]{section.34}{Change of basis}{}% 34
+\BOOKMARK [1][-]{section.35}{Application: Perspective rectification}{}% 35
+\BOOKMARK [1][-]{section.36}{The dot product}{}% 36
+\BOOKMARK [1][-]{section.37}{Orthogonal bases}{}% 37
+\BOOKMARK [1][-]{section.38}{Orthogonal projections}{}% 38
+\BOOKMARK [1][-]{section.39}{Computation of least square solutions}{}% 39
+\BOOKMARK [1][-]{section.40}{Least square lines and curves}{}% 40
+\BOOKMARK [1][-]{section.41}{ Inner product spaces}{}% 41
+\BOOKMARK [1][-]{section.42}{Eigenvalues and eigenvectors}{}% 42
+\BOOKMARK [1][-]{section.43}{Matrix diagonalization}{}% 43
+\BOOKMARK [1][-]{section.44}{Diagonalization of symmetric matrices}{}% 44
+\BOOKMARK [1][-]{section.45}{Spectral decomposition of symmetric matrices}{}% 45
+\BOOKMARK [1][-]{section.46}{Application: Symmetric image compression}{}% 46
+\BOOKMARK [1][-]{section.47}{Singular Value Decomposition}{}% 47
+\BOOKMARK [1][-]{section.48}{Application: SVD and data analysis}{}% 48

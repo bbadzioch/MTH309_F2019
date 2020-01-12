@@ -1,0 +1,278 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{rotating}
+\usepackage[tracking=true]{microtype}
+\usepackage{booktabs}
+\usepackage[nolinks]{qrcode}
+
+\usepackage[ linkcolor=black, citecolor=linkcol, urlcolor= black, colorlinks=true, hypertexnames=false]
+{hyperref}
+
+
+%---------------------------------------------------
+% Page geometry
+%---------------------------------------------------
+\usepackage[
+                      top    = 1in,
+                      bottom = 1in,
+                      left   = 0.8in,
+                      right  = 0.8in]
+                      {geometry}
+
+
+%---------------------------------------------------
+%  Paragraph formatting
+%---------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parsep}{10pt}
+
+
+%---------------------------------------------------
+%  List formatting
+%---------------------------------------------------
+\usepackage{enumitem}
+\setlist{noitemsep,topsep=5pt,parsep=0pt,partopsep= 0pt, itemindent=0pt}
+%\renewcommand{\labelenumi}{\theenumi )} % redefines enumerate labels to 1), 2) 3) etc.
+
+\newcommand{\benu}{\begin{enumerate}}
+\newcommand{\eenu}{\end{enumerate}}
+
+\newcommand{\bitem}{\begin{itemize}}
+\newcommand{\eitem}{\end{itemize}}
+
+
+%---------------------------------------------------
+% TiKZ
+%---------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{calc,through,intersections, arrows, shapes, matrix, patterns, calligraphy, positioning}
+\usetikzlibrary{decorations.pathmorphing, decorations.markings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{bending}
+\usepackage{pgf, pgfplots}
+\usepgflibrary{plotmarks}
+\pgfplotsset{compat=1.12}
+\tikzset{>=latex}
+
+\newcommand{\btikz}[1][]{\begin{equation*}\begin{tikzpicture}[#1]}
+\newcommand{\etikz}{\end{tikzpicture}\end{equation*}}
+
+
+
+
+
+%---------------------------------------------------
+% Colors
+%---------------------------------------------------
+\definecolor{myblue}{rgb}{0,.25,.6}
+\definecolor{light}{gray}{.95}
+\definecolor{lines}{RGB}{60, 60, 60}
+\definecolor{shadecolor}{rgb}{.95,1,1}
+
+
+
+%---------------------------------------------------
+% Fonts
+%---------------------------------------------------
+\usepackage[math]{iwona}
+\usepackage{pifont}
+
+% This fixes the missing norm font with Iwona - use \norm{}
+\usepackage{mathtools}
+\usepackage{xparse}
+\DeclarePairedDelimiter\xnorm{\lVert}{\rVert}
+\NewDocumentCommand{\norm}{som}
+ {\IfBooleanTF{#1}
+   {\xnorm*{#3}}
+   {\IfNoValueTF{#2}
+     {\mathopen{|\mkern-.8mu|}#3\mathclose{|\mkern-.8mu|}}
+     {\xnorm[#2]{#3}}%
+   }
+ }
+
+
+%---------------------------------------------------
+%  Larger fonts 
+%---------------------------------------------------
+\usepackage{scrextend}
+\changefontsizes{15pt}
+
+
+%---------------------------------------------------
+% Section headings
+%---------------------------------------------------
+
+\usepackage[explicit]{titlesec}
+\titleformat{\section}
+  {\bfseries\selectfont}
+  {}{0pt}
+  {\begin{tcolorbox}[
+      enhanced,
+      boxrule=0pt,
+      arc=0pt,
+      outer arc=0pt,
+      width=\textwidth,
+      top=2pt,
+      bottom = 2pt,
+      interior code={\fill[red!70!black] (frame.north west) rectangle (frame.south east);},
+    ]
+    \color{white} MTH 309 \hfill  
+    #1
+    \end{tcolorbox}}
+
+
+%---------------------------------------------------
+% Page numbering
+%---------------------------------------------------
+%\numberwithin{page}{section}
+%\renewcommand{\thepage}{\thesection-\arabic{page}}
+
+%---------------------------------------------------
+% New section macro
+%---------------------------------------------------
+\newcommand{\lecture}[1]{\newpage\section{#1}}
+%\newcommand{\lecture}[1]{\newpage\section{#1}\setcounter{page}{1}}
+
+%---------------------------------------------------
+%  Colorboxes
+%---------------------------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% theorem colorbox
+\newenvironment{cbox}[1][]
+                            {\begin{tcolorbox}[width=\textwidth,
+                                                          fonttitle=\bfseries,
+                                                          arc = 0mm,
+                                                          toptitle = 0mm,
+                                                          beforeafter skip= 20pt,
+                                                          bottomtitle = 0mm,
+                            			        title = {#1},
+                 		 		        enhanced,
+                  					boxsep=4pt,
+                  					left=8pt,
+                  					right=8pt,
+                  					top=5pt,
+					                 bottom = 5pt,
+					                 colframe = red!70!black,
+					                 colback  = red!10!white,
+                  					]
+			  }
+			  {\end{tcolorbox}}
+
+% simple text frame
+\newenvironment{sframe}
+                            {\begin{tcolorbox}[width=\textwidth,
+                                                          arc = 0mm,
+                                                          toptitle = 0mm,
+                                                          beforeafter skip= 10pt,
+                                                          bottomtitle = 0mm,
+                 		 		        enhanced,
+                  					boxsep=4pt,
+                  					left=8pt,
+                  					right=8pt,
+                  					top=0pt,
+					                 bottom = 6pt,
+					                 colframe = black,
+					                 colback  = white,
+                  					]
+			  }
+			  {\end{tcolorbox}}
+
+
+%---------------------------------------------------
+%  Math macros
+%---------------------------------------------------
+
+
+% Matrices - the macro below produces matrices with evenly spaces columns
+% with column spacing determined by the width of matrix entries
+\usepackage{mathtools,collcell,eqparbox}
+
+\newcounter{BMatrix}
+
+\newlength{\maxwd}
+\newcommand{\setmaxwd}[1]{%
+  \eqmakebox[BM-\theBMatrix][\BMalign]{$#1$}%
+}
+
+\MHInternalSyntaxOn
+\newenvironment{BMatrix}[1][r]{
+  \def\BMalign{#1}
+  \stepcounter{BMatrix}
+  \left[
+  \MH_let:NwN \@ifnextchar \MH_nospace_ifnextchar:Nnn
+  \array{ #1 *{\numexpr\c@MaxMatrixCols-1} {>{\collectcell\setmaxwd}#1<{\endcollectcell}}}
+  }{
+  \endarray 
+  \right]
+}
+\MHInternalSyntaxOff
+\makeatother
+
+\newcommand{\bbm}[1][r]{\begin{BMatrix}[#1]}
+\newcommand{\ebm}{\end{BMatrix}}
+
+
+
+% Rings and fields
+
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Poly}{{\mathbb P}}
+
+
+% Vector space bases
+\newcommand{\BB}{{\mathcal B}}
+\newcommand{\CC}{{\mathcal C}}
+\newcommand{\DD}{{\mathcal D}}
+\newcommand{\EE}{{\mathcal E}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\MM}{{\mathcal M}}
+
+% Vectors
+
+\newcommand{\bb}{{\bf b}}
+\newcommand{\cc}{{\bf c}}
+\newcommand{\dd}{{\bf d}}
+\newcommand{\ee}{{\bf e}}
+\newcommand{\mm}{{\bf m}}
+\newcommand{\nn}{{\bf n}}
+\newcommand{\vv}{{\bf v}}
+\newcommand{\ww}{{\bf w}}
+\newcommand{\uu}{{\bf u}}
+\newcommand{\xx}{{\bf x}}
+\newcommand{\yy}{{\bf y}}
+\newcommand{\zz}{{\bf z}}
+\newcommand{\zzero}{{\bf 0}}
+
+
+% Arrows
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\lla}{\longleftarrow}
+
+
+% Vector spaces
+\newcommand{\Span}{\text{Span}}
+\newcommand{\Col}{\text{Col}}
+\newcommand{\Row}{\text{Row}}
+\newcommand{\Nul}{\text{Nul}}
+\newcommand{\Ker}{\text{Ker}}
+\newcommand{\Img}{\text{Im}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\dist}{\text{dist}}
+\newcommand{\proj}{\text{proj}}
+
+\DeclarePairedDelimiter{\innprod}{\langle}{\rangle}
+
+

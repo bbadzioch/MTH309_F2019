@@ -1,0 +1,148 @@
+
+\input{tf_header.tex}
+\usepackage{multicol}
+
+\begin{document}
+
+
+
+\lecture{True or False ? (part 5)}
+
+
+
+
+
+{\bf Instructions.}
+
+\vskip 2mm
+
+In this problem you will be given a few statements. For each statement you  need to 
+decide if it is true or not, and justify your answer. 
+
+
+
+\vskip 15mm
+
+
+{\bf How to justify your answer.}
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is false, it suffices  to give a counterexample. 
+For example, consider the the statement: 
+
+\begin{center}
+\emph{The last digit of every even number is either 2, 4, or 8.}
+\end{center}
+
+To show that this statement is false, it is enough to point out that, for example, 10 is an even number, 
+but its last digit is 0. 
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is true, you need to 
+provide a reasoning explaining why it is true in all instances. Giving one example when it is true will 
+not suffice, since the statement may not work in some other cases.  For example, consider the the statement: 
+
+\begin{center}
+\emph{If $n$ is an even number then $n+2$ is also an even number.}
+\end{center}
+
+You can justify that this is true as follows. Even numbers are integers which are multiples of $2$. 
+If $n$ is even then $n = 2m$ for some integer $m$. Then $n+2 = 2m+2 = 2(m+1)$, 
+which shows that $n+2$ is even.  
+
+
+\hfill
+
+\begin{cbox}[Note]
+This problem will not be collected or graded. However, problems of this type will appear on  exams
+in this course. Sample solutions are provided at the end. 
+
+\end{cbox}
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf For each of the statements given below decide if it is true or false. If you decide that it is true, justify your answer. 
+If you think it is false give a counterexample. }
+
+\vskip 10mm
+
+\benu
+\item[\bf a)]  If a set $\{\vv_{1}, \vv_{2}\}$ is a basis of $\R^{2}$ then the set $\{ \vv_{1}, \vv_{1} + \vv_{2}\}$
+is also a basis of $\R^{2}$. 
+
+
+\vskip 10mm
+
+
+\item[\bf b)]  If  $S = \{ \vv_{1}, \vv_{2}, \vv_{3}\}$ is set of vectors in a vector space $V$ such that 
+$\vv_{1}$  is the zero vector, then  $S$ cannot be a basis of $V$. 
+
+
+\vskip 10mm
+
+\item[\bf c)]  If $V$ and $W$ are subspaces of $\R^{2}$ and $\dim V = \dim W$ then $V = W$. 
+
+
+\vskip 10mm
+
+\item[\bf d)]  If $V$ and $W$ are subspaces of $\R^{2}$ and $\dim V = \dim W = 2$ then $V = W$. 
+
+
+\eenu
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf Here are solutions to the questions from the previous page. You should try to answer all 
+questions by yourself before reading these solutions.}
+
+\vskip 5mm 
+
+{\small
+\benu
+
+
+\item[\bf a)] TRUE.  If a  set $\{ \vv_{1}, \vv_{2} \}$ is a basis of $\R^{2}$  then the matrix 
+$\bbm \vv_{1} & \vv_{2}\\ \ebm$ is invertible, i.e. if $\det \bbm \vv_{1} & \vv_{2}\\ \ebm \neq 0$. 
+Since
+$$ \det \bbm \vv_{1} & \vv_{1}  + \vv_{2} \\  \ebm =  \det \bbm \vv_{1} & \vv_{2} \\ \ebm  \neq 0$$
+we obtain that $\bbm\vv_{1} & \vv_{1}  + \vv_{2} \\ \ebm$ in an invertible matrix, which shows that the set 
+$\{ \vv_{1}, \vv_{1} + \vv_{2}\}$ is a basis of $\R^{2}$. 
+
+
+\vskip 5mm
+
+\item[\bf b)]  TRUE.  In order to be a basis the set $\{ \vv_{1}, \vv_{2}, \vv_{3} \}$ must be 
+linearly independent, i.e. the equation
+$$x_{1}\vv_{1} + x_{2}\vv_{2} + x_{2}\vv_{3} = \zzero$$
+must have only one, trivial solution. However, if $\vv_{1} = \zzero$ this equation has infinitely 
+many solutions, since we can take $x_{1}$ to be any number, and $x_{2} = 0$, $x_{3} = 0$. 
+
+
+
+
+
+\vskip 5mm
+
+\item[\bf c)]  FALSE. Take e.g.
+$$V = \Span\left( \bbm 1 \\ 0  \ebm\right)\hskip 5mm W= \Span\left( \bbm 0 \\ 1  \ebm\right)$$
+Then $\dim V = \dim W = 1$, but $V \neq W$. 
+
+
+\vskip 5mm
+
+\item[\bf d)] TRUE. Recall that if $W$ is a subspace of a vector space $V$ and $\dim V = \dim W$ then 
+$V = W$. In our case $\dim V = \dim W = \dim \R^{2}$ which gives $V = W = \R^{2}$. 
+\eenu
+}
+
+
+
+\end{document}

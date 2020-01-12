@@ -1,0 +1,172 @@
+
+\input{tf_header.tex}
+\usepackage{multicol}
+
+\begin{document}
+
+
+
+\lecture{True or False ? (part 3)}
+
+
+
+
+
+{\bf Instructions.}
+
+\vskip 2mm
+
+In this problem you will be given a few statements. For each statement you  need to 
+decide if it is true or not, and justify your answer. 
+
+
+
+\vskip 15mm
+
+
+{\bf How to justify your answer.}
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is false, it suffices  to give a counterexample. 
+For example, consider the the statement: 
+
+\begin{center}
+\emph{The last digit of every even number is either 2, 4, or 8.}
+\end{center}
+
+To show that this statement is false, it is enough to point out that, for example, 10 is an even number, 
+but its last digit is 0. 
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is true, you need to 
+provide a reasoning explaining why it is true in all instances. Giving one example when it is true will 
+not suffice, since the statement may not work in some other cases.  For example, consider the the statement: 
+
+\begin{center}
+\emph{If $n$ is an even number then $n+2$ is also an even number.}
+\end{center}
+
+You can justify that this is true as follows. Even numbers are integers which are multiples of $2$. 
+If $n$ is even then $n = 2m$ for some integer $m$. Then $n+2 = 2m+2 = 2(m+1)$, 
+which shows that $n+2$ is even.  
+
+
+\hfill
+
+\begin{cbox}[Note]
+This problem will not be collected or graded. However, problems of this type will appear on  exams
+in this course. Sample solutions are provided at the end. 
+
+\end{cbox}
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf For each of the statements given below decide if it is true or false. If you decide that it is true, justify your answer. 
+If you think it is false give a counterexample. }
+
+\vskip 10mm
+
+\benu
+\item[\bf a)]  If $A$, $B$, $C$ are non-zero $2\times 2$ matrices such that $AB = AC$ then $B = C$.  
+\vskip 10mm
+
+\item[\bf b)]  If $A$ is $2\times 2$ matrix such that the matrix transformation $T_A\colon \R^2 \to \R^2$
+given by $T_A({\vv}) = A\vv$ is one-to-one, then $T_A$ must be onto. 
+\vskip 10mm
+
+\item[\bf c)]  If $A$, $B$ are invertible $2\times 2$ matrices, and $B\neq -A$ then $A + B$ is also invertible. 
+
+\vskip 10mm
+
+\item[\bf d)]  If $A$ is a $2\times 2$ matrix then $ (AA^T)^T  = AA^T$ (where $A^T$ denotes the transpose 
+of the matrix $A$). 
+
+\eenu
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf Here are solutions to the questions from the previous page. You should try to answer all 
+questions by yourself before reading these solutions.}
+
+\vskip 5mm 
+
+{\small
+\benu
+
+\item[\bf a)] FALSE. Take for example
+$$
+A = 
+\begin{bmatrix}
+1 & 1 \\
+1 &  1 \\
+\end{bmatrix},
+\hskip  5mm
+B = 
+\begin{bmatrix}
+1 &  1 \\
+1 &  1 \\
+\end{bmatrix},
+\hskip  5mm
+C = 
+\begin{bmatrix}
+2 & 2 \\
+0 &  0 \\
+\end{bmatrix}
+$$
+Then  $AB = AC = \begin{bmatrix} 2 & 2 \\ 2 &  2 \\ \end{bmatrix}$ but $B \neq C$. 
+
+\vskip 5mm
+
+
+\item[\bf b)] TRUE.  Recall that  $T_A$ is one-to-one if and only of the matrix $A$
+has a pivot position in every column, and that  $T_A$ is onto if and only of the matrix $A$
+has a pivot position in every row. 
+
+Since by assumption $T_A$ is one-to-one and since $A$ has 2 columns it follows that $A$ has 
+2 pivot positions. Thus, since $A$ has two rows, there will be a pivot position in every row of $A$. 
+This  means that $T_A$ is onto. 
+   
+
+
+\vskip 5mm
+
+\item[\bf c)]  FALSE. Take for example 
+$$
+A = 
+\begin{bmatrix}
+1 & 0 \\
+0 &  1 \\
+\end{bmatrix},
+\hskip  5mm
+B = 
+\begin{bmatrix}
+0 & 1 \\
+1 &  0 \\
+\end{bmatrix},
+$$
+Both $A$ and $B$ are invertible, but the matrix $A+B = \begin{bmatrix} 1 & 1 \\ 1 &  1 \\ \end{bmatrix}$ is not. 
+
+\vskip 5mm
+
+\item[\bf d)] TRUE.  Recall that for any matrices $A$, $B$ we have $(AB)^T = B^T A^T$. 
+Taking $B = A^T$ we obtain:
+$$(AA^T)^T =  (A^T)^T A^T$$   
+ Since $(A^T)^T = A$ this gives $(AA^T)^T = AA^T$. 
+
+
+
+
+\eenu
+}
+
+
+
+\end{document}

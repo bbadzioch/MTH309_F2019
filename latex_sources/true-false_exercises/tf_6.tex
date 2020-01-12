@@ -1,0 +1,183 @@
+
+\input{tf_header.tex}
+\usepackage{multicol}
+
+\begin{document}
+
+
+
+\lecture{True or False ? (part 6)}
+
+
+
+
+
+{\bf Instructions.}
+
+\vskip 2mm
+
+In this problem you will be given a few statements. For each statement you  need to 
+decide if it is true or not, and justify your answer. 
+
+
+
+\vskip 15mm
+
+
+{\bf How to justify your answer.}
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is false, it suffices  to give a counterexample. 
+For example, consider the the statement: 
+
+\begin{center}
+\emph{The last digit of every even number is either 2, 4, or 8.}
+\end{center}
+
+To show that this statement is false, it is enough to point out that, for example, 10 is an even number, 
+but its last digit is 0. 
+
+\vskip 2mm
+
+\textbullet \  In order to show that a statement is true, you need to 
+provide a reasoning explaining why it is true in all instances. Giving one example when it is true will 
+not suffice, since the statement may not work in some other cases.  For example, consider the the statement: 
+
+\begin{center}
+\emph{If $n$ is an even number then $n+2$ is also an even number.}
+\end{center}
+
+You can justify that this is true as follows. Even numbers are integers which are multiples of $2$. 
+If $n$ is even then $n = 2m$ for some integer $m$. Then $n+2 = 2m+2 = 2(m+1)$, 
+which shows that $n+2$ is even.  
+
+
+\hfill
+
+\begin{cbox}[Note]
+This problem will not be collected or graded. However, problems of this type will appear on  exams
+in this course. Sample solutions are provided at the end. 
+
+\end{cbox}
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf For each of the statements given below decide if it is true or false. If you decide that it is true, justify your answer. 
+If you think it is false give a counterexample. }
+
+\vskip 10mm
+
+\benu
+
+
+\item[\bf a)]  If $A$ is a $2\times 4$ matrix then  $\rank(A) \leq 2$.  
+
+
+\vskip 10mm
+
+
+\item[\bf b)] If ${\mathcal B} = \{\bb_{1}, \bb_{2}, \bb_{3}\}$ is an orthogonal basis of $\R^{3}$, 
+and $\vv\in \R^{3}$ is a vector orthogonal to both $\bb_{1}$ and $\bb_{2}$, then $\vv = c\bb_{3}$ for 
+some scalar $c$. 
+
+
+\vskip 10mm
+
+\item[\bf c)]  If $V$ is a subspace of $\R^{3}$ and $\ww\in \R^{3}$ is a vector such that 
+$\proj_{V}\ww = \frac{1}{2}\ww$ then $\ww$ must be the zero vector.  
+
+
+\vskip 10mm
+
+
+\item[\bf d)]  If $\uu_{1}$, $\uu_{2}$, $\uu_{3}$ are vectors in $\R^{3}$ such that $\uu_{1}$ is orthogonal 
+to $\uu_{2}$ and $\uu_{2}$ is orthogonal to $\uu_{3}$, then $\uu_{1}$ must be othogonal to $\uu_{3}$ 
+
+
+
+
+\eenu
+
+
+%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%
+
+{\bf Here are solutions to the questions from the previous page. You should try to answer all 
+questions by yourself before reading these solutions.}
+
+\vskip 5mm 
+
+{\small
+\benu
+
+
+\item[\bf a)]  TRUE. Recall that $\rank(A) = \dim \Col(A)$, and that $\dim \Col(A)$  is equal to the 
+number of pivot columns of $A$. Since the matrix $A$ has two rows, it can have at most two 
+pivot positions (one in each row), and so it has at most two pivot columns. 
+
+\vskip 5mm
+
+
+\item[\bf b)]  TRUE. Let 
+$$[\vv]_{\mathcal B}  = 
+\bbm
+c_{1}\\
+c_{2}\\
+c_{3} \\ 
+\ebm
+$$
+be the coordinate vector of $\vv$ relative to the basis $\mathcal B$. Then 
+$$\vv = c_{1} \bb_{1} + c_{2}\bb_{2} + c_{3}\bb_{3}$$
+Also, since the basis $\mathcal B$ is orthogonal, we have $c_{i} = \displaystyle\frac{\bb_{i}\cdot \vv}{\bb_{i}\cdot \bb_{i}}$
+for $i=1, 2, 3$. By assumption $\bb_{1}\cdot \vv = \bb_{2}\cdot \vv = 0$, so $c_{1} = c_{2} = 0$. This gives 
+$\vv = c_{3}\bb_{3}$. 
+
+
+
+\vskip 5mm
+
+\item[\bf c)] TRUE.  Recall that the vector $\ww - \proj_{V}\ww$  is orthogonal to the subspace 
+$V$. Since $ \proj_{V}\ww\in V$ this means in particular that $\ww - \proj_{V}\ww$ is orthogonal 
+to $ \proj_{V}\ww$. If $\proj_{V}\ww = \frac{1}{2}\ww$ then $\ww - \proj_{V}\ww =  \frac{1}{2}\ww$, 
+so we obtain that $ \frac{1}{2}\ww$ is orthogonal to itself. However, the only vector orthogonal to 
+itself is the zero vector. This gives  $ \frac{1}{2}\ww = \zzero$, and so $\ww = \zzero$. 
+
+
+\vskip 5mm
+
+\item[\bf d)]  FALSE.  Take e.g. 
+$$
+\uu_{1} = 
+\bbm
+1 \\
+0 \\
+0 \\
+\ebm,
+\hskip 5mm
+\uu_{2} = 
+\bbm
+0 \\
+1 \\
+0 \\
+\ebm,
+\hskip 5mm
+\uu_{3} = 
+\bbm
+1 \\
+0 \\
+1 \\
+\ebm
+$$
+
+
+\eenu
+}
+
+
+
+\end{document}
