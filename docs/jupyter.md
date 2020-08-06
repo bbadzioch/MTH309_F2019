@@ -20,7 +20,6 @@ jupyter notebook
 
 in a terminal (Mac and Linux) or command prompt (Windows). Once you execute this command, a web browser will open showing
 the  Jupyter Notebook dashboard. Here is a short video which demonstrates basic functionality of the Jupyter Notebook.
-Watching the first 4 minutes or so will be enough to get started.
 
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BJnro9jQ3fE"
