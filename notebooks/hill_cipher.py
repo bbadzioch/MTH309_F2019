@@ -18,7 +18,7 @@ def num2char(numlist):
     N = 20
     chars = []
     for i, n in enumerate(numlist):
-        n = round(n)
+        n = int(round(n))
         print("{:>4}".format(n), end = ''),
         if n == 0:
             chars.append('_')
@@ -36,7 +36,7 @@ def num2char(numlist):
 def num2char_text_only(numlist):
     chars = []
     for n in numlist:
-        n = round(n)
+        n = int(round(n))
         if n == 0:
             chars.append('_')
         elif n < 0 or n > 26:
