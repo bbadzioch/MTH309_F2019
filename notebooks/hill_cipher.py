@@ -2,7 +2,7 @@ from sympy import *
 
 import numpy as np
 import string
-#import hill_cipher_samples
+import hill_cipher_samples
 
 init_printing(use_latex='mathjax')
 
