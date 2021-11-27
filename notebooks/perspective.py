@@ -20,7 +20,11 @@ def paste_image(background, foreground, coord_change):
     '''
 
     img = plt.imread(foreground)
+    if (len(img.shape) == 3) and (img.shape[2] > 3):
+        img = img[:, :, :3]
     background = plt.imread(background)
+    if (len(background.shape) == 3) and (background.shape[2] > 3):
+        background = background[:, :, :3]
 
 
     if img.dtype == 'uint8':
