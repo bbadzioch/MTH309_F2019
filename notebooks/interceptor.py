@@ -125,6 +125,7 @@ class interceptor():
         self.ani = FuncAnimation(self.fig,
                                  func = self.update_plot,
                                  init_func= self.init_plot,
+                                 cache_frame_data=False,
                                  frames=self.frames,
                                  interval=20,
                                  blit=True,
