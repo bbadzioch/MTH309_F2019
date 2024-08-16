@@ -5,9 +5,9 @@ to install Python and Jupyter Notebook software.
 
 ## Installation instructions
 
-**1.** Install the [Anaconda Distribution of Python 3.8](https://www.anaconda.com/products/individual#Downloads).
+**1.** Install the [Anaconda Distribution of Python](https://www.anaconda.com/download/success).
 
-**Note.** If you have Anaconda previously installed, make sure that it includes Python 3.6 or higher, and fairly
+**Note.** If you have Anaconda previously installed, make sure that it includes Python 3.8 or higher, and fairly
 recent versions of the Jupyter Notebook and the following Python packages: sympy, numpy, matplotlib, bokeh, requests.
 Upgrade if needed. If you are installing Anaconda for the first time, don't worry about it, everything is included
 in the distribution.
