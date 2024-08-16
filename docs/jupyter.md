@@ -34,7 +34,7 @@ allowfullscreen>
 
 Every Jupyter notebook you create is stored on your computer as a file with the `.ipynb`
 extension. You can check where these files are located by opening a new or existing notebook,
-typing `pwd` in a code cell, and executing the cell. This will display
+typing `pwd`  in a code cell, and executing the cell. This will display
 the path to the directory with the notebook.
 
 ![pwd](/assets/img/pwd.png)
