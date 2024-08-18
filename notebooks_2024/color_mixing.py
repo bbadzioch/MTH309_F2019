@@ -81,7 +81,7 @@ def rgb_sliders():
 
     # create plot, as a rect() glyph and centered text label, with fill and text color taken from source
     p1 = figure(x_range=(-8, 8), y_range=(-4, 4),
-                plot_width=350, plot_height=200,
+                width=350, height=200,
                 title='move sliders to change color', tools='')
 
     # added just to get a black frame arund the plot
