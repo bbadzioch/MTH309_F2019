@@ -188,7 +188,7 @@ A system of linear equations can have either
 \vskip 10mm
 
 \begin{cbox}[Definition]
-If as system of linear equations which has no solutions is called an \emph{inconsistent system}. 
+A system of linear equations which has no solutions is called an \emph{inconsistent system}. 
 Otherwise the system is \emph{consistent}.
 \end{cbox}
 
@@ -1597,7 +1597,7 @@ $
 
 At time $t= 0$ a target is observed at the position $(x_{0}, y_{0})$ moving in the direction of the vector $v_{t}$. 
 The target is moving at such speed, that it travels the length of $v_{t}$ in one second. A missile is positioned 
-at the point $(0, 0)$. When fired, it will move vertically with such speed, that it will travel the length of the vector 
+at the point $(0, 0)$. When fired, it will move vertically at such speed, that it will travel the length of the vector 
 $v_{m}$ in one second. After how many seconds should the missile be fired in order to intercept the target? 
 
 
@@ -1700,6 +1700,7 @@ $
 A vector $\ww\in \R^{n}$ is a \emph{linear combination} of vectors $\vv_{1}, \dots \vv_{p}\in \R^{n}$
 if there exists scalars $c_{1}, \dots, c_{p}$ such that
 $$\ww = c_{1}\vv_{1} + {\dots} + c_{p}\vv_{p}$$ 
+
 \end{cbox}
 
 \vskip 3mm
@@ -9970,14 +9971,14 @@ eigenvectors $\vv_{1}, \vv_{2}, \dots, \vv_{n}$.
 
 \begin{tikzpicture}
 \node at (0,0) {$
-P = \bbm \ \vv_{1} & \vv_{2} & \dots & \vv_{n}\ \\ \ebm
+P = \bbm \vv_{1} & \vv_{2} & \dots & \vv_{n} \\ \ebm
 $};
 \node at (0, -2) {$
 D = 
 \bbm[c]
 \lambda_{1} & 0 & \dots & 0 \\
 0 & \lambda_{2}  & \dots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+\vdots & \vdots & \ddots & 0 \\
 0 & 0 & \dots & \lambda_{n} \\
 \ebm
 $};
@@ -10086,7 +10087,7 @@ D =
 \bbm[c]
 \lambda_{1} & 0 & \dots & 0 \\
 0 & \lambda_{2}  & \dots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+\vdots & \vdots & \ddots & 0 \\
 0 & 0 & \dots & \lambda_{n} \\
 \ebm
 $};
@@ -10243,7 +10244,7 @@ is an orthogonal matrix.
 
 \vskip 20mm
 
-\begin{cbox}[Spectral Theorem]
+\begin{cbox}[Theorem]
 If $A$ is a symmetric matrix then $A$ is \emph{orthogonally diagonalizable}. That is, there exists 
 an orthogonal matrix $Q$ and a diagonal matrix $D$ such that 
 $$A = QDQ^{-1} = QDQ^{T}$$
