@@ -19,7 +19,7 @@ def num2char(numlist):
     N = 20
     chars = []
     for i, n in enumerate(numlist):
-        n = round(n)
+        n = int(round(n))
         print("{:>4}".format(n), end = ''),
         if n == 0:
             chars.append('_')
