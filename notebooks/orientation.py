@@ -78,7 +78,7 @@ class Plot():
 
     # figure properties
     figsize = (5, 5)
-    style = "seaborn"
+    style = "seaborn-v0_8"
     xlim = 2
     ylim = 2
 
@@ -409,7 +409,7 @@ def colored_points():
                         mew = 2,
                         ms=8)
 
-    style.use("seaborn")
+    style.use("seaborn-v0_8")
     fig = plt.figure(figsize = (8, 4))
     ax = plt.subplot(111)
     ax.set_xlim(0, xlim)
