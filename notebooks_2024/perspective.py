@@ -8,11 +8,12 @@ def paste_image(background, foreground, coord_change):
     '''
     Pastes an image into a quadrilateral area of the background image defined by four vertices.
 
-    background:  the name of the background image file
-
-    img:         the name of the foreground image file
-
-    corners:     the 3x3 change of coordinates matrix from the background image coordinates
+    background:  
+        The name of the background image file
+    foreground:  
+        The name of the foreground image file
+    coord_change:
+        The 3x3 change of coordinates matrix from the background image coordinates
                  to the camera coordinates
 
 
@@ -37,7 +38,6 @@ def paste_image(background, foreground, coord_change):
     brows, bcols = background.shape[:2]
     irows, icols = img.shape[:2]
 
-    #calculate the coordinate change matrix from the he camera coordinates to the object coordinates
     A = np.array(coord_change).astype(float)
     B = np.array([[1, 0, 0], [0, icols-1, 0], [0, 0, irows-1]]).T
     CB = np.dot(B, np.linalg.inv(A))
